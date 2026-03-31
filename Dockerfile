@@ -45,5 +45,5 @@ COPY entrypoint.sh /home/user/web/entrypoint.sh
 RUN chmod +x /wait-for-it.sh /home/user/web/entrypoint.sh
 USER user
 
-EXPOSE 8000
+EXPOSE 8050
 ENTRYPOINT ["/wait-for-it.sh", "db:5432", "--", "sh", "/home/user/web/entrypoint.sh"]
