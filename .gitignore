@@ -71,4 +71,4 @@ db.sqlite3
 
 # for mac
 docker-compose.override.yml
-docker-compose.yml
+# docker-compose.yml

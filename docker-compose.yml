@@ -1,0 +1,95 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: django_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: >
+      sh -c "python manage.py collectstatic --noinput &&
+             python manage.py migrate &&
+             python manage.py migrate token_blacklist &&
+             gunicorn --bind 0.0.0.0:8000 config.wsgi:application --workers 4"
+    volumes:
+      - /home/ubuntu/.data/static:/home/user/web/staticfiles/
+      - /home/ubuntu/.data/media:/home/user/web/media/
+      - .:/home/user/web/
+    ports:
+      - "8050:8000"
+    restart: always
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+      - redis
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings
+    networks:
+      - app-network
+
+  celery_beat:
+    container_name: celery_beat
+    build: .
+    command: celery -A config beat --loglevel=debug
+    volumes:
+      - /home/ubuntu/.data/static:/home/user/web/staticfiles/
+      - /home/ubuntu/.data/media:/home/user/web/media/
+      - .:/home/user/web/
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - app
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings
+    networks:
+      - app-network
+
+  db:
+    image: postgres:16
+    container_name: postgres_db
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  redis:
+    image: redis:7.0-alpine
+    container_name: redis_cache
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
+
+  celery:
+    container_name: celery_worker
+    build: .
+    command: celery -A config worker --loglevel=debug
+    volumes:
+      - /home/ubuntu/.data/static:/home/user/web/staticfiles/
+      - /home/ubuntu/.data/media:/home/user/web/media/
+      - .:/home/user/web/
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - app
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+  redis-data:
+
+networks:
+  app-network:
+    driver: bridge
