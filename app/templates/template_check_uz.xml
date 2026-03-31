@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Hisob-faktura</title>
+    <style>
+        th, td { padding: 4px; font-size: 10px; }
+        h5 { font-size: 14px; }
+        p { margin: 0; font-size: 12px; }
+        hr { width: 100%; border: none; border-top: 1px solid black; opacity: 1; }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="{{ company_logo }}" style="max-height: 45px;" alt="Logo">
+        <p class="text-center"><strong>{{ company_name }}</strong></p>
+        <p class="text-center"><strong>{{ company_city }}, {{ company_street }}</strong></p>
+    </div>
+
+    <div>
+        <p>Kassir: {{ cashier_name }}</p>
+        <p>Tel: {{ company_phone }}</p>
+        <p>Sale: {{ order_number }}</p>
+        <p>Order: {{ order_id }}</p>
+        <p>Xaridor: {{ customer_name }}</p>
+        <p>Sana: {{ order_date }}</p>
+    </div>
+
+    <hr>
+
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Mahsulot</th>
+                <th>Miqdor</th>
+                <th>Narx</th>
+                <th>Summasi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ products_rows }}
+        </tbody>
+    </table>
+
+    <div>
+        <h5 class="text-center">Bonuslar</h5>
+        <p>Hozirgi balans: {{ current_balance }}</p>
+        <p>Foydalanilgan: {{ cashback_used }}</p>
+        <p>Qo'shilgan: {{ cashback_added }}</p>
+        <p>Ta'rif: {{ loyalty_status }} - {{ cashback_percentage }}%</p>
+    </div>
+
+    <hr>
+
+    <p>Hammasi: {{ total_amount }} {{ currency }}</p>
+    <p>To'lov usuli: {{ payment_method }} - {{ payment_amount }} {{ currency }}</p>
+
+    <hr>
+    <p class="text-center"><strong>Xaridingiz uchun rahmat!</strong></p>
+    <hr>
+
+    <p>FM raqami: {{ fm_num }}</p>
+    <p>Fiskal belgi: {{ f_num }}</p>
+
+    <h5 class="text-center">Soliq QR kodi</h5>
+    <img src="{{ qr_url }}" alt="QR Code">
+</body>
+</html>

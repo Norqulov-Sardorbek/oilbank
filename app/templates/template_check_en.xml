@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+    <style>
+        th, td { padding: 4px; font-size: 10px; }
+        h5 { font-size: 14px; }
+        p { margin: 0; font-size: 12px; }
+        hr { width: 100%; border: none; border-top: 1px solid black; opacity: 1; }
+    </style>
+</head>
+<body>
+    <div>
+        {% if company_logo %}
+            <img src="{{ company_logo }}" style="max-height: 45px;" alt="Logo">
+        {% endif %}
+        <p class="text-center"><strong>{{ company_name }}</strong></p>
+        <p class="text-center"><strong>{{ company_city }}, {{ company_street }}</strong></p>
+    </div>
+    <div>
+        <p>Cashier: {{ cashier_name }}</p>
+        <p>Phone: {{ company_phone }}</p>
+        <p>Sale #: {{ order_number }}</p>
+        <p>Order #: {{ order_id }}</p>
+        <p>Customer: {{ customer_name }}</p>
+        <p>Date: {{ order_date }}</p>
+    </div>
+    <hr>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ products_rows|safe }}
+        </tbody>
+    </table>
+    <div>
+        <h5 class="text-center">Bonuses</h5>
+        <p>Current Balance: {{ current_balance }}</p>
+        <p>Used: {{ cashback_used }}</p>
+        <p>Added: {{ cashback_added }}</p>
+        <p>Status: {{ loyalty_status }} - {{ cashback_percentage }}%</p>
+    </div>
+    <hr>
+    <p>Total: {{ total_amount }} {{ currency }}</p>
+    <p>Payment Method: {{ payment_method }} - {{ payment_amount }} {{ currency }}</p>
+    <hr>
+    <p class="text-center"><strong>Thank you for your purchase!</strong></p>
+    <hr>
+    <p>FM Number: {{ fm_num }}</p>
+    <p>Fiscal Code: {{ f_num }}</p>
+    <h5 class="text-center">Tax QR Code</h5>
+    {% if qr_url %}
+        <img src="{{ qr_url }}" alt="QR Code">
+    {% endif %}
+</body>
+</html>

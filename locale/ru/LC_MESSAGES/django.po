@@ -1,0 +1,463 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-25 12:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Pending"
+msgstr "В ожидании"
+
+msgid "Confirmed"
+msgstr "Подтверждено"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "No Show"
+msgstr "без шоу"
+
+msgid "Failed"
+msgstr "Не удалось"
+
+msgid "Delivery"
+msgstr "Доставка"
+
+msgid "Pickup"
+msgstr "Самовывоз"
+
+msgid "Processing"
+msgstr "В обработке"
+
+msgid "Cancelled"
+msgstr "Отменено"
+
+msgid "Collecting"
+msgstr "Собирается"
+
+msgid "Ready for shipment"
+msgstr "Готово к отправке"
+
+msgid "Out for delivery"
+msgstr "В процессе доставки / Ожидает получения"
+
+
+msgid "Refaund"
+msgstr "Возврат"
+
+msgid "Created"
+msgstr "Создан"
+
+msgid "No Price"
+msgstr "Без цены"
+
+msgid "Waiting"
+msgstr "Ожидание"
+
+msgid "Paid"
+msgstr "Оплачено"
+
+msgid "Canceled"
+msgstr "Отменено"
+
+msgid "Expired"
+msgstr "Истёк срок"
+
+msgid "Card"
+msgstr "Карта"
+
+msgid "Cash"
+msgstr "Наличные"
+
+msgid "Bank"
+msgstr "Банк"
+
+msgid "Male"
+msgstr "Мужчина"
+
+msgid "Female"
+msgstr "Женщина"
+
+msgid "OTP sent successfully"
+msgstr "OTP успешно отправлен"
+
+msgid "You have a recent SMS that you can use"
+msgstr "У вас есть недавнее SMS, которое можно использовать"
+
+msgid "OTP code has expired"
+msgstr "Срок действия кода OTP истёк"
+
+msgid "You already have an active OTP that you can use. Please wait %(seconds)s seconds before requesting a new one."
+msgstr "У вас уже есть активный код OTP. Пожалуйста, подождите %(seconds)s секунд перед запросом нового."
+
+msgid "You have exceeded the SMS limit for the last 24 hours. Please wait {hours} hours before sending another SMS"
+msgstr "Вы превысили лимит SMS за последние 24 часа. Пожалуйста, подождите {hours} часов, прежде чем отправить другое SMS"
+
+msgid "Provided phone number doesn't match your current phone number"
+msgstr "Указанный номер телефона не соответствует вашему текущему номеру"
+
+msgid "Current phone number verified successfully"
+msgstr "Текущий номер телефона успешно подтверждён"
+
+msgid "This phone number is already registered by another user"
+msgstr "Этот номер телефона уже зарегистрирован другим пользователем"
+
+msgid "Phone number changed successfully"
+msgstr "Номер телефона успешно изменён"
+
+msgid "Invalid OTP code or phone number"
+msgstr "Неверный код OTP или номер телефона"
+
+msgid "OTP not found for this phone number."
+msgstr "Для этого номера телефона не найден код OTP."
+
+msgid "OTP code has already been used."
+msgstr "Код OTP уже был использован."
+
+msgid "OTP has expired."
+msgstr "Срок действия OTP истёк."
+
+msgid "Invalid OTP code."
+msgstr "Неверный код OTP."
+
+msgid "The phone field must be set"
+msgstr "Поле телефона должно быть заполнено"
+
+msgid "Superuser must have is_staff=True"
+msgstr "Суперпользователь должен иметь is_staff=True"
+
+msgid "Superuser must have is_superuser=True"
+msgstr "Суперпользователь должен иметь is_superuser=True"
+
+msgid "You cannot mark the primary address as 'non-primary'. To perform this action, please set another address as the primary one first."
+msgstr "Нельзя снять статус 'основной' с этого адреса. Пожалуйста, сначала назначьте другой адрес как основной."
+
+msgid "Rating can only be given for completed bookings."
+msgstr "Оценка может быть оставлена только за завершённые бронирования."
+
+msgid "You have already rated this booking."
+msgstr "Вы уже оценили это бронирование."
+
+msgid "Booking is required."
+msgstr "Бронирование обязательно."
+
+msgid "At least one field must be filled (image, video, or caption)."
+msgstr "Должно быть заполнено хотя бы одно поле (изображение, видео или подпись)."
+
+msgid "All image fields must be provided if any are filled."
+msgstr "Если заполнено одно поле изображения, необходимо заполнить все поля изображений."
+
+msgid "All video fields must be provided if any are filled."
+msgstr "Если заполнено одно поле видео, необходимо заполнить все поля видео."
+
+msgid "All caption fields must be provided if any are filled."
+msgstr "Если заполнено одно поле подписи, необходимо заполнить все поля подписей."
+
+msgid "Cars retrieved successfully"
+msgstr "Список автомобилей успешно получен"
+
+msgid "Car retrieved successfully"
+msgstr "Автомобиль успешно получен"
+
+msgid "Car created successfully"
+msgstr "Автомобиль успешно создан"
+
+msgid "Car updated successfully"
+msgstr "Автомобиль успешно обновлён"
+
+msgid "Car partially updated successfully"
+msgstr "Автомобиль частично обновлён"
+
+msgid "Oil change history added successfully."
+msgstr "История замены масла успешно добавлена."
+
+msgid "Oil change history retrieved successfully."
+msgstr "История замены масла успешно получена."
+
+msgid "Oil change history updated successfully."
+msgstr "История замены масла успешно обновлена."
+
+msgid "Oil change history partially updated successfully."
+msgstr "История замены масла частично обновлена."
+
+msgid "Oil change history deleted successfully."
+msgstr "История замены масла успешно удалена."
+
+msgid "You can only add oil change history for your own cars."
+msgstr "Вы можете добавлять историю замены масла только для своих автомобилей."
+
+msgid "Category depth must be <= 2"
+msgstr "Глубина категории должна быть меньше или равна 2"
+
+msgid "Cannot add subcategory to a category that has products."
+msgstr "Невозможно добавить подкатегорию в категорию, которая уже имеет продукты."
+
+msgid "Product can only be assigned to a leaf category (one that has no subcategories)."
+msgstr "Продукт может быть назначен только в конечную категорию (категорию без подкатегорий)."
+
+msgid "Category depth must be 2 levels or less"
+msgstr "Глубина категории должна быть не более 2 уровней"
+
+msgid "Price must be greater than or equal to 0."
+msgstr "Цена должна быть больше или равна 0."
+
+msgid "You have recently used an SMS code, please wait {seconds} seconds for a new one"
+msgstr "Вы недавно использовали SMS-код, пожалуйста, подождите {seconds} секунд для нового"
+
+msgid "This car number is already taken. Please use a unique number."
+msgstr "Этот номер автомобиля уже занят. Пожалуйста, используйте уникальный номер."
+
+msgid "User account deleted successfully."
+msgstr "Аккаунт пользователя успешно удалён."
+
+msgid "Your verification code to access the Carland system is: {code}. Please do not share this code with anyone."
+msgstr "Код подтверждения для входа в систему Carland: {code}. Пожалуйста, никому не сообщайте этот код."
+
+msgid "Code for deleting accounting data in the Carland.uz system: {code}"
+msgstr "Код для удаления учетных данных в системе Carland.uz: {code}"
+
+msgid "OTP verified successfully"
+msgstr "OTP успешно подтвержден"
+
+msgid "Monday"
+msgstr "Понедельник"
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Wednesday"
+msgstr "Среда"
+
+msgid "Thursday"
+msgstr "Четверг"
+
+msgid "Friday"
+msgstr "Пятница"
+
+msgid "Saturday"
+msgstr "Суббота"
+
+msgid "Sunday"
+msgstr "Воскресенье"
+
+msgid "Branch or appointment not found."
+msgstr "Филиал или приём не найдены."
+
+msgid "You already have a booking for this slot."
+msgstr "Вы уже забронировали это время."
+
+msgid "This car is already booked for this slot."
+msgstr "Эта машина уже забронирована на это время."
+
+msgid "This time slot is already full."
+msgstr "Этот временной интервал уже заполнен."
+
+msgid "Booking created successfully."
+msgstr "Бронирование успешно создано."
+
+msgid "Booking updated successfully."
+msgstr "Бронирование успешно обновлено."
+
+msgid "Branch is required for pickup orders"
+msgstr "Для заказов с самовывозом требуется наличие отделения"
+
+msgid "Address is required for delivery orders"
+msgstr "Для заказов с доставкой требуется адрес"
+
+msgid "Card ID is required when payment method is Card"
+msgstr "При выборе способа оплаты «Карта» требуется идентификатор карты."
+
+msgid "Pickup time is required for pickup orders"
+msgstr "Для заказов с самовывозом требуется время получения"
+
+msgid "Pickup time must be at least tomorrow"
+msgstr "Время получения должно быть не позднее завтрашнего дня."
+
+msgid "Invalid or expired promo code"
+msgstr "Недействительный или просроченный промокод"
+
+msgid "You can only rate completed orders"
+msgstr "Вы можете оценивать только выполненные заказы."
+
+msgid "You can only rate your own orders"
+msgstr "Вы можете оценивать только свои собственные заказы."
+
+msgid "You have already rated this order"
+msgstr "Вы уже оценили этот заказ"
+
+msgid "Basket has been cleared."
+msgstr "Корзина очищена."
+
+msgid "Invalid payment method. Choose from MULTICARD, CARD, CASH, or UZUM."
+msgstr "Invalid payment method. Choose from MULTICARD, CARD, CASH, or UZUM."
+
+msgid "Story marked as read"
+msgstr "История отмечена как прочитанная"
+
+msgid "You are not authorized to mark this story as viewed"
+msgstr "Вы не имеете прав для отметки истории как прочитанной"
+
+msgid "Car number is not valid in Uzbekistan"
+msgstr "Номер автомобиля недействителен в Узбекистане."
+
+msgid "Order amount exceeds the maximum limit of %(max_amount)s"
+msgstr "Сумма заказа превышает максимально допустимый лимит %(max_amount)s"
+
+msgid "Cashback"
+msgstr "Кэшбэк"
+
+msgid "Mixed"
+msgstr "Смешанный"
+
+msgid "Invalid payment method. Choose from {}"
+msgstr "Недопустимый способ оплаты. Выберите из: {}"
+
+msgid "Balance can only be used with BALANCE, MIXED, or online payment methods"
+msgstr "Кэшбэк можно использовать только с кэшбэком, смешанным или онлайн-способами оплаты"
+
+msgid "Secondary payment method is required for MIXED payments"
+msgstr "Для смешанных платежей требуется вторичный способ оплаты"
+
+msgid "Cashback balance amount is not more than {min_amount}."
+msgstr "Сумма баланса кэшбека не превышает {min_amount}."
+
+msgid "Insufficient cashback balance to cover order amount"
+msgstr "Недостаточно кэшбэк-баланса для покрытия суммы заказа"
+
+msgid "Amount is less than 500 UZS after cashback deduction"
+msgstr "Сумма менее 500 UZS после вычета кэшбэка"
+
+msgid "Order amount is more than {max_amount} to use cashback."
+msgstr "Сумма заказа для использования кэшбэка превышает {max_amount}."
+
+msgid "Anonymous"
+msgstr "Аноним"
+
+msgid "Order Items"
+msgstr "Элементы заказа"
+
+msgid "Item"
+msgstr "Товар"
+
+msgid "Quantity x Price/Units"
+msgstr "Количество x Цена/Единица"
+
+msgid "Total"
+msgstr "Итого"
+
+msgid "Bonuses"
+msgstr "Бонусы"
+
+msgid "Added Tariff - %"
+msgstr "Добавленный тариф - %"
+
+msgid "Current Balance"
+msgstr "Текущий баланс"
+
+msgid "Payment"
+msgstr "Оплата"
+
+msgid "Total Amount"
+msgstr "Общая сумма"
+
+msgid "Payment Method"
+msgstr "Способ оплаты"
+
+msgid "Thank you for your purchase!"
+msgstr "Спасибо за покупку!"
+
+msgid "Order has been rated"
+msgstr "Заказ оценен"
+
+msgid "Order rating has been deleted"
+msgstr "Рейтинг заказа удален"
+
+msgid "Product has been rated"
+msgstr "Продукт оценен"
+
+msgid "Product rating has been deleted"
+msgstr "Рейтинг продукта удален"
+
+msgid "Oil change has been rated"
+msgstr "Замена масла оценена"
+
+msgid "Oil change rating deleted successfully"
+msgstr "Рейтинг замены масла удален успешно"
+
+msgid "No balance available for this user"
+msgstr "Для этого пользователя нет доступного баланса"
+
+msgid "Requested balance amount exceeds available balance"
+msgstr "Запрошенная сумма баланса превышает доступный баланс"
+
+msgid "Requested balance amount is not enough to pay the order"
+msgstr "Запрошенная сумма баланса недостаточна для оплаты заказа"
+
+msgid "Requested balance amount exceeds the order amount after discounts"
+msgstr "Запрошенная сумма баланса превышает сумму заказа после скидок"
+
+msgid "Selected products have been removed from your basket."
+msgstr "Выбранные товары были удалены из вашей корзины."
+
+msgid "Order status cannot be COMPLETED without payment status being COMPLETED"
+msgstr "Статус заказа не может быть ЗАВЕРШЕН без завершения статуса оплаты"
+
+msgid "Price cannot be None"
+msgstr "Цена не может быть пустой"
+
+msgid "The non-cashback payment must cover at least 500 units for mixed payments"
+msgstr "Безналичный платеж должен покрывать как минимум 500 единиц для смешанных платежей"
+
+msgid "Order created successfully"
+msgstr "Заказ успешно создан"
+
+msgid "No order name"
+msgstr "Номер заказа не найден"
+
+msgid "Invalid promo code"
+msgstr "Неверный промокод"
+
+msgid "This promo code is not for you"
+msgstr "Этот промокод не для вас"
+
+msgid "This promo code is not linked to a program"
+msgstr "Этот промокод не связан с программой"
+
+msgid "The program for this promo code is inactive"
+msgstr "Программа для этого промокода неактивна"
+
+msgid "This promo code is not valid today"
+msgstr "Этот промокод сегодня недействителен"
+
+msgid "This promo code has expired"
+msgstr "Срок действия промокода истёк"
+
+msgid "This promo code has no remaining uses"
+msgstr "Этот промокод больше не используется"
+
+msgid "No appointment found for this branch"
+msgstr "Запись не найдена для данного филиала"
+
+msgid "Notification marked as read"
+msgstr "Уведомление отмечено как прочитанное"
+
+msgid "All notifications marked as read"
+msgstr "Все уведомления отмечены как прочитанные"
+
+msgid "<#> Your verification code to access the Carland system is: {code}. Please do not share this code with anyone.\n\n{hash}"
+msgstr "<#> Код подтверждения для входа в систему Carland: {code}. Пожалуйста, никому не сообщайте этот код.\n\n{hash}"

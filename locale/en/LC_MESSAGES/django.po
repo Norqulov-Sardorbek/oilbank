@@ -1,0 +1,467 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-25 12:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Pending"
+msgstr "Pending"
+
+msgid "Confirmed"
+msgstr "Confirmed"
+
+msgid "Completed"
+msgstr "Completed"
+
+msgid "No Show"
+msgstr "No Show"
+
+msgid "Failed"
+msgstr "Failed"
+
+msgid "Delivery"
+msgstr "Delivery"
+
+msgid "Pickup"
+msgstr "Pickup"
+
+msgid "Processing"
+msgstr "Processing"
+
+msgid "Cancelled"
+msgstr "Cancelled"
+
+msgid "Collecting"
+msgstr "Collecting"
+
+msgid "Ready for shipment"
+msgstr "Ready for shipment"
+
+msgid "Out for delivery"
+msgstr "Out for delivery"
+
+msgid "Refaund"
+msgstr "Refaund"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "No Price"
+msgstr "No Price"
+
+msgid "Waiting"
+msgstr "Waiting"
+
+msgid "Paid"
+msgstr "Paid"
+
+msgid "Canceled"
+msgstr "Canceled"
+
+msgid "Expired"
+msgstr "Expired"
+
+msgid "Card"
+msgstr "Card"
+
+msgid "Cash"
+msgstr "Cash"
+
+msgid "Bank"
+msgstr "Bank"
+
+msgid "Male"
+msgstr "Male"
+
+msgid "Female"
+msgstr "Female"
+
+msgid "OTP sent successfully"
+msgstr "OTP sent successfully"
+
+msgid "You have a recent SMS that you can use"
+msgstr "You have a recent SMS that you can use"
+
+msgid "OTP code has expired"
+msgstr "OTP code has expired"
+
+msgid "You already have an active OTP that you can use. Please wait %(seconds)s seconds before requesting a new one."
+msgstr "You already have an active OTP that you can use. Please wait %(seconds)s seconds before requesting a new one."
+
+msgid "Provided phone number doesn't match your current phone number"
+msgstr "Provided phone number doesn't match your current phone number"
+
+msgid "This phone number is already registered by another user"
+msgstr "This phone number is already registered by another user"
+
+msgid "Current phone number verified successfully"
+msgstr "Current phone number verified successfully"
+
+msgid "Phone number changed successfully"
+msgstr "Phone number changed successfully"
+
+msgid "Invalid OTP code or phone number"
+msgstr "Invalid OTP code or phone number"
+
+msgid "The phone field must be set"
+msgstr "The phone field must be set"
+
+msgid "Superuser must have is_staff=True"
+msgstr "Superuser must have is_staff=True"
+
+msgid "Superuser must have is_superuser=True"
+msgstr "Superuser must have is_superuser=True"
+
+msgid "You cannot mark the primary address as 'non-primary'. To perform this action, please set another address as the primary one first."
+msgstr "You cannot mark the primary address as 'non-primary'. To perform this action, please set another address as the primary one first."
+
+msgid "Rating can only be given for completed bookings."
+msgstr "Rating can only be given for completed bookings."
+
+msgid "You have already rated this booking."
+msgstr "You have already rated this booking."
+
+msgid "Booking is required."
+msgstr "Booking is required."
+
+msgid "OTP not found for this phone number."
+msgstr "OTP not found for this phone number."
+
+msgid "OTP code has already been used."
+msgstr "OTP code has already been used."
+
+msgid "OTP has expired."
+msgstr "OTP has expired."
+
+msgid "Invalid OTP code."
+msgstr "Invalid OTP code."
+
+msgid "At least one field must be filled (image, video, or caption)."
+msgstr "At least one field must be filled (image, video, or caption)."
+
+msgid "All image fields must be provided if any are filled."
+msgstr "All image fields must be provided if any are filled."
+
+msgid "All video fields must be provided if any are filled."
+msgstr "All video fields must be provided if any are filled."
+
+msgid "All caption fields must be provided if any are filled."
+msgstr "All caption fields must be provided if any are filled."
+
+msgid "Cars retrieved successfully"
+msgstr "Cars retrieved successfully"
+
+msgid "Car retrieved successfully"
+msgstr "Car retrieved successfully"
+
+msgid "Car created successfully"
+msgstr "Car created successfully"
+
+msgid "Car updated successfully"
+msgstr "Car updated successfully"
+
+msgid "Car partially updated successfully"
+msgstr "Car partially updated successfully"
+
+msgid "Oil change history added successfully."
+msgstr "Oil change history added successfully."
+
+msgid "Oil change history retrieved successfully."
+msgstr "Oil change history retrieved successfully."
+
+msgid "OTP verified successfully"
+msgstr "OTP verified successfully"
+
+msgid "Oil change history updated successfully."
+msgstr "Oil change history updated successfully."
+
+msgid "Oil change history partially updated successfully."
+msgstr "Oil change history partially updated successfully."
+
+msgid "Oil change history deleted successfully."
+msgstr "Oil change history deleted successfully."
+
+msgid "You can only add oil change history for your own cars."
+msgstr "You can only add oil change history for your own cars."
+
+msgid "Category depth must be <= 2"
+msgstr "Category depth must be <= 2"
+
+msgid "Cannot add subcategory to a category that has products."
+msgstr "Cannot add subcategory to a category that has products."
+
+msgid "Product can only be assigned to a leaf category (one that has no subcategories)."
+msgstr "Product can only be assigned to a leaf category (one that has no subcategories)."
+
+msgid "Category depth must be 2 levels or less"
+msgstr "Category depth must be 2 levels or less"
+
+msgid "Cannot add a subcategory to a category that already has products."
+msgstr "Cannot add a subcategory to a category that already has products."
+
+msgid "Price must be greater than or equal to 0."
+msgstr "Price must be greater than or equal to 0."
+
+msgid "You have recently used an SMS code, please wait {seconds} seconds for a new one"
+msgstr "You have recently used an SMS code, please wait {seconds} seconds for a new one"
+
+msgid "You have exceeded the SMS limit for the last 24 hours. Please wait {hours} hours before sending another SMS"
+msgstr "You have exceeded the SMS limit for the last 24 hours. Please wait {hours} hours before sending another SMS"
+
+msgid "This car number is already taken. Please use a unique number."
+msgstr "This car number is already taken. Please use a unique number."
+
+msgid "User account deleted successfully."
+msgstr "User account deleted successfully."
+
+msgid "Code to access Carland: {code}"
+msgstr "Code to access Carland: {code}"
+
+msgid "Your verification code to access the Carland system is: {code}. Please do not share this code with anyone."
+msgstr "Your verification code to access the Carland system is: {code}. Please do not share this code with anyone."
+
+msgid "Code for deleting accounting data in the Carland.uz system: {code}"
+msgstr "Code for deleting accounting data in the Carland.uz system: {code}"
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "Branch or appointment not found."
+msgstr "Branch or appointment not found."
+
+msgid "You already have a booking for this slot."
+msgstr "You already have a booking for this slot."
+
+msgid "This car is already booked for this slot."
+msgstr "This car is already booked for this slot."
+
+msgid "This time slot is already full."
+msgstr "This time slot is already full."
+
+msgid "Booking created successfully."
+msgstr "Booking created successfully."
+
+msgid "Booking updated successfully."
+msgstr "Booking updated successfully."
+
+msgid "Branch is required for pickup orders"
+msgstr "Branch is required for pickup orders"
+
+msgid "Address is required for delivery orders"
+msgstr "Address is required for delivery orders"
+
+msgid "Card ID is required when payment method is Card"
+msgstr "Card ID is required when payment method is Card"
+
+msgid "Pickup time is required for pickup orders"
+msgstr "Pickup time is required for pickup orders"
+
+msgid "Pickup time must be at least tomorrow"
+msgstr "Pickup time must be at least tomorrow"
+
+msgid "Invalid or expired promo code"
+msgstr "Invalid or expired promo code"
+
+msgid "You can only rate completed orders"
+msgstr "You can only rate completed orders"
+
+msgid "You can only rate your own orders"
+msgstr "You can only rate your own orders"
+
+msgid "You have already rated this order"
+msgstr "You have already rated this order"
+
+msgid "Order is required"
+msgstr "Order is required"
+
+msgid "Invalid payment method. Choose from MULTICARD, CARD, CASH, or UZUM."
+msgstr "Invalid payment method. Choose from MULTICARD, CARD, CASH, or UZUM."
+
+msgid "Story marked as read"
+msgstr "Story marked as read"
+
+msgid "You are not authorized to mark this story as viewed"
+msgstr "You are not authorized to mark this story as viewed"
+
+msgid "Car number is not valid in Uzbekistan"
+msgstr "Car number is not valid in Uzbekistan"
+
+msgid "Order amount exceeds the maximum limit of %(max_amount)s"
+msgstr "Order amount exceeds the maximum limit of %(max_amount)s"
+
+msgid "Cashback"
+msgstr "Cashback"
+
+msgid "Mixed"
+msgstr "Mixed"
+
+msgid "Invalid payment method. Choose from {}"
+msgstr "Invalid payment method. Choose from {}"
+
+msgid "Balance can only be used with BALANCE, MIXED, or online payment methods"
+msgstr "Cashback can only be used with CASHBACK, MIXED, or online payment methods"
+
+msgid "Secondary payment method is required for MIXED payments"
+msgstr "Secondary payment method is required for MIXED payments"
+
+msgid "Cashback balance amount is not more than {min_amount}."
+msgstr "Cashback balance amount is not more than {min_amount}."
+
+msgid "Insufficient cashback balance to cover order amount"
+msgstr "Insufficient cashback balance to cover order amount"
+
+msgid "Amount is less than 500 UZS after cashback deduction"
+msgstr "Amount is less than 500 UZS after cashback deduction"
+
+msgid "Order amount is more than {max_amount} to use cashback."
+msgstr "The order amount for using cashback exceeds {max_amount}."
+
+msgid "Anonymous"
+msgstr "Anonymous"
+
+msgid "Order has been rated"
+msgstr "Order has been rated"
+
+msgid "Order rating has been deleted"
+msgstr "Order rating has been deleted"
+
+msgid "Product has been rated"
+msgstr "Product has been rated"
+
+msgid "Product rating has been deleted"
+msgstr "Product rating has been deleted"
+
+msgid "Oil change has been rated"
+msgstr "Oil change has been rated"
+
+msgid "Oil change rating deleted successfully"
+msgstr "Oil change rating deleted successfully"
+
+
+msgid "Order Items"
+msgstr "Order Items"
+
+msgid "Item"
+msgstr "Item"
+
+msgid "Quantity x Price/Units"
+msgstr "Quantity x Price/Units"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Bonuses"
+msgstr "Bonuses"
+
+msgid "Added Tariff - %"
+msgstr "Added Tariff - %"
+
+msgid "Current Balance"
+msgstr "Current Balance"
+
+msgid "Payment"
+msgstr "Payment"
+
+msgid "Total Amount"
+msgstr "Total Amount"
+
+msgid "Payment Method"
+msgstr "Payment Method"
+
+msgid "Thank you for your purchase!"
+msgstr "Thank you for your purchase!"
+
+msgid "No balance available for this user"
+msgstr "No balance available for this user"
+
+msgid "Requested balance amount exceeds available balance"
+msgstr "Requested balance amount exceeds available balance"
+
+msgid "Requested balance amount is not enough to pay the order"
+msgstr "Requested balance amount is not enough to pay the order"
+
+msgid "Requested balance amount exceeds the order amount after discounts"
+msgstr "Requested balance amount exceeds the order amount after discounts"
+
+msgid "Selected products have been removed from your basket."
+msgstr "Selected products have been removed from your basket."
+
+msgid "Order status cannot be COMPLETED without payment status being COMPLETED"
+msgstr "Order status cannot be COMPLETED without payment status being COMPLETED"
+
+msgid "Price cannot be None"
+msgstr "Price cannot be None"
+
+msgid "The non-cashback payment must cover at least 500 units for mixed payments"
+msgstr "The non-cashback payment must cover at least 500 units for mixed payments"
+
+msgid "Order created successfully"
+msgstr "Order created successfully"
+
+msgid "No order name"
+msgstr "No order name"
+
+msgid "Invalid promo code"
+msgstr "Invalid promo code"
+
+msgid "This promo code is not for you"
+msgstr "This promo code is not for you"
+
+msgid "This promo code is not linked to a program"
+msgstr "This promo code is not linked to a program"
+
+msgid "The program for this promo code is inactive"
+msgstr "The program for this promo code is inactive"
+
+msgid "This promo code is not valid today"
+msgstr "This promo code is not valid today"
+
+msgid "This promo code has expired"
+msgstr "This promo code has expired"
+
+msgid "This promo code has no remaining uses"
+msgstr "This promo code has no remaining uses"
+
+msgid "No appointment found for this branch"
+msgstr "No appointment found for this branch"
+
+msgid "Notification marked as read"
+msgstr "Notification marked as read"
+
+msgid "All notifications marked as read"
+msgstr "All notifications marked as read"
+
+msgid "<#> Your verification code to access the Carland system is: {code}. Please do not share this code with anyone.\n{hash}"
+msgstr "<#> Your verification code to access the Carland system is: {code}. Please do not share this code with anyone.\n{hash}"

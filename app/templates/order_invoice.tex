@@ -1,0 +1,59 @@
+% Setting up a comprehensive LaTeX preamble
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{amsmath}
+\usepackage{noto}
+\usepackage{xcolor}
+\definecolor{headercolor}{RGB}{0,102,0}
+
+% Document begins
+\begin{document}
+
+% Header with dynamic branch data and payment time
+\begin{center}
+    \vspace*{0.5cm}
+    {\Huge \textbf{\{BRANCH_NAME\}\par}
+    \vspace*{0.2cm}
+    \{BRANCH_CONTACTS\} \\
+    Order \{ORDER_UUID\} \\
+    \{PAYMENT_TIME\}
+\end{center}
+\vspace*{0.5cm}
+
+% Itemized list for order items
+\section*{\{SECTION_ORDER_ITEMS\}}
+\begin{longtable}{|l|l|l|}
+    \hline
+    \rowcolor{headercolor}
+    \color{white} \textbf{\{LABEL_ITEM\}} & \color{white} \textbf{\{LABEL_QUANTITY_PRICE\}} & \color{white} \textbf{\{LABEL_TOTAL\}} \\
+    \hline
+    \endhead
+    \{ITEM_NAME\} & \{QUANTITY\} x \{UNIT_PRICE\} uzs / Units & \{ITEM_TOTAL\} uzs \\
+    \hline
+\end{longtable}
+
+% Bonuses section with total discount
+\section*{\{SECTION_BONUSES\}}
+\begin{itemize}
+    \item \{LABEL_BONUS_TARIFF\}: \{BONUS_TARIFF\} uzs
+    \item \{LABEL_CURRENT_BALANCE\}: \{BALANCE\} uzs
+\end{itemize}
+
+% Payment details
+\section*{\{SECTION_PAYMENT\}}
+\begin{itemize}
+    \item \{LABEL_TOTAL_AMOUNT\}: \{TOTAL_AMOUNT\} uzs
+    \item \{LABEL_PAYMENT_METHOD\}: \{PAYMENT_AMOUNT\} uzs
+\end{itemize}
+
+% Thank you note
+\vspace*{1cm}
+{\centering \textbf{\{THANK_YOU_MESSAGE\}\par}
+
+\end{document}

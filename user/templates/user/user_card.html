@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Card</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    width: 300px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.phone {
+    margin-top: 5px;
+    color: #777;
+}
+
+.btn {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #ff5a2c;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    {% if user.avatar %}
+        <img src="{{ user.avatar.url }}" class="avatar">
+    {% endif %}
+
+    <div class="name">{{ user.first_name }} {{ user.last_name }}</div>
+    <div class="phone">+{{ user.user.phone }}</div>
+
+    <a href="tel:+{{ user.user.phone }}" class="btn">
+        Qo‘ng‘iroq qilish
+    </a>
+
+</div>
+
+</body>
+</html>

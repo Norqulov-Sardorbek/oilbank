@@ -1,0 +1,464 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-23 10:36+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Pending"
+msgstr "Kutilmoqda"
+
+msgid "Completed"
+msgstr "Yakunlangan"
+
+msgid "Confirmed"
+msgstr "Tasdiqlangan"
+
+msgid "Failed"
+msgstr "Muvaffaqiyatsiz"
+
+msgid "Delivery"
+msgstr "Yetkazib berish"
+
+msgid "Pickup"
+msgstr "Olib ketish"
+
+msgid "Processing"
+msgstr "Jarayonda"
+
+msgid "Cancelled"
+msgstr "Bekor qilingan"
+
+msgid "Collecting"
+msgstr "Yig'ilmoqda"
+
+msgid "Ready for shipment"
+msgstr "Yuborishga tayyor"
+
+msgid "Out for delivery"
+msgstr "Yetkazilmoqda / Olib ketishga tayyor"
+
+msgid "No Show"
+msgstr "Ko'rsatilmaydi"
+
+msgid "Refaund"
+msgstr "Qaytarib berish"
+
+msgid "Created"
+msgstr "Yaratilgan"
+
+msgid "No Price"
+msgstr "Narx yo'q"
+
+msgid "Waiting"
+msgstr "Kutish"
+
+msgid "Paid"
+msgstr "To'langan"
+
+msgid "Canceled"
+msgstr "Bekor qilingan"
+
+msgid "Expired"
+msgstr "Muddati o'tgan"
+
+msgid "Card"
+msgstr "Karta"
+
+msgid "Cash"
+msgstr "Naqd pul"
+
+msgid "Bank"
+msgstr "Bank"
+
+msgid "Male"
+msgstr "Erkak"
+
+msgid "Female"
+msgstr "Ayol"
+
+msgid "OTP sent successfully"
+msgstr "OTP kodi muvaffaqiyatli yuborildi"
+
+msgid "You have a recent SMS that you can use"
+msgstr "Sizda foydalanishingiz mumkin bo'lgan yaqinda kelgan SMS mavjud"
+
+msgid "OTP code has expired"
+msgstr "OTP kodining muddati tugagan"
+
+msgid "You already have an active OTP that you can use. Please wait %(seconds)s seconds before requesting a new one."
+msgstr "Sizda foydalanishingiz mumkin bo'lgan faol OTP mavjud. Yangisini so'rashdan oldin %(seconds)s soniya kuting."
+
+msgid "You have exceeded the SMS limit for the last 24 hours. Please wait {hours} hours before sending another SMS"
+msgstr "Oxirgi 24 soat ichida SMS limitidan oshib ketdingiz. Boshqa SMS yuborishdan oldin {hours} soat kuting"
+
+msgid "Provided phone number doesn't match your current phone number"
+msgstr "Keltirilgan telefon raqami sizning hozirgi raqamingizga mos kelmaydi"
+
+msgid "This phone number is already registered by another user"
+msgstr "Ushbu telefon raqami boshqa foydalanuvchi tomonidan ro'yxatdan o'tkazilgan"
+
+msgid "Current phone number verified successfully"
+msgstr "Joriy telefon raqami muvaffaqiyatli tasdiqlandi"
+
+msgid "Phone number changed successfully"
+msgstr "Telefon raqami muvaffaqiyatli o'zgartirildi"
+
+msgid "Invalid OTP code or phone number"
+msgstr "Noto'g'ri OTP kodi yoki telefon raqami"
+
+msgid "The phone field must be set"
+msgstr "Telefon maydoni to'ldirilishi shart"
+
+msgid "Superuser must have is_staff=True"
+msgstr "Superuser is_staff=True bo'lishi kerak"
+
+msgid "Superuser must have is_superuser=True"
+msgstr "Superuser is_superuser=True bo'lishi kerak"
+
+msgid "You cannot mark the primary address as 'non-primary'. To perform this action, please set another address as the primary one first."
+msgstr "Asosiy manzilni 'asosiy emas' deb belgilay olmaysiz. Ushbu amalni bajarish uchun avval boshqa manzilni asosiy qilib belgilang."
+
+msgid "Rating can only be given for completed bookings."
+msgstr "Baholash faqat yakunlangan bronlar uchun berilishi mumkin."
+
+msgid "You have already rated this booking."
+msgstr "Siz bu bronni allaqachon baholagansiz."
+
+msgid "Booking is required."
+msgstr "Bron qilish talab qilinadi."
+
+msgid "OTP not found for this phone number."
+msgstr "Ushbu telefon raqami uchun OTP topilmadi."
+
+msgid "OTP code has already been used."
+msgstr "OTP kodi allaqachon ishlatilgan."
+
+msgid "OTP has expired."
+msgstr "OTP muddati tugagan."
+
+msgid "Invalid OTP code."
+msgstr "Noto'g'ri OTP kodi."
+
+msgid "At least one field must be filled (image, video, or caption)."
+msgstr "Kamida bitta maydon to'ldirilishi kerak (rasm, video yoki sarlavha)."
+
+msgid "All image fields must be provided if any are filled."
+msgstr "Agar biron bir maydon to'ldirilgan bo'lsa, barcha rasm maydonlari taqdim etilishi kerak."
+
+msgid "All video fields must be provided if any are filled."
+msgstr "Agar biron bir maydon to'ldirilgan bo'lsa, barcha video maydonlari taqdim etilishi kerak."
+
+msgid "All caption fields must be provided if any are filled."
+msgstr "Agar biron bir maydon to'ldirilgan bo'lsa, barcha sarlavha maydonlari taqdim etilishi kerak."
+
+msgid "Cars retrieved successfully"
+msgstr "Mashinalar muvaffaqiyatli olindi"
+
+msgid "Car retrieved successfully"
+msgstr "Mashina muvaffaqiyatli olindi"
+
+msgid "Car created successfully"
+msgstr "Mashina muvaffaqiyatli yaratildi"
+
+msgid "Car updated successfully"
+msgstr "Mashina muvaffaqiyatli yangilandi"
+
+msgid "Car partially updated successfully"
+msgstr "Mashina qisman muvaffaqiyatli yangilandi"
+
+msgid "Oil change history added successfully."
+msgstr "Yog' almashtirish tarixi muvaffaqiyatli qo'shildi."
+
+msgid "Oil change history retrieved successfully."
+msgstr "Yog' almashtirish tarixi muvaffaqiyatli olindi."
+
+msgid "Oil change history updated successfully."
+msgstr "Yog' almashtirish tarixi muvaffaqiyatli yangilandi."
+
+msgid "Oil change history partially updated successfully."
+msgstr "Yog' almashtirish tarixi qisman muvaffaqiyatli yangilandi."
+
+msgid "Oil change history deleted successfully."
+msgstr "Yog' almashtirish tarixi muvaffaqiyatli o'chirildi."
+
+msgid "You can only add oil change history for your own cars."
+msgstr "Siz faqat o'zingizning mashinalaringiz uchun yog' almashtirish tarixini qo'sha olasiz."
+
+msgid "Category depth must be <= 2"
+msgstr "Kategoriya chuqurligi <= 2 bo'lishi kerak"
+
+msgid "Cannot add subcategory to a category that has products."
+msgstr "Mahsulotlari bo'lgan kategoriyaga quyi kategoriya qo'shib bo'lmaydi."
+
+msgid "Product can only be assigned to a leaf category (one that has no subcategories)."
+msgstr "Mahsulot faqat barg kategoriyasiga (quyi kategoriyalari bo'lmagan) tayinlanishi mumkin."
+
+msgid "Category depth must be 2 levels or less"
+msgstr "Kategoriya chuqurligi 2 daraja yoki undan kam bo'lishi kerak"
+
+msgid "Cannot add a subcategory to a category that already has products."
+msgstr "Mahsulotlari bo'lgan kategoriyaga quyi kategoriya qo'shib bo'lmaydi."
+
+msgid "Price must be greater than or equal to 0."
+msgstr "Narx 0 dan katta yoki teng bo'lishi kerak."
+
+msgid "You have recently used an SMS code, please wait {seconds} seconds for a new one"
+msgstr "Yaqinda SMS koddan foydalangansiz, yangisi uchun {seconds} soniya kuting"
+
+msgid "This car number is already taken. Please use a unique number."
+msgstr "Bu mashina raqami allaqachon band qilingan. Iltimos, noyob raqamdan foydalaning."
+
+msgid "User account deleted successfully."
+msgstr "Foydalanuvchi hisobi muvaffaqiyatli o'chirildi."
+
+msgid "Your verification code to access the Carland system is: {code}. Please do not share this code with anyone."
+msgstr "Carland tizimiga kirish uchun tasdiqlash kodi: {code}. Iltimos, ushbu kodni hech kimga bermang."
+
+msgid "Code for deleting accounting data in the Carland.uz system: {code}"
+msgstr "Carland.uz tizimidagi hisob ma'lumotlarini o'chirish uchun kod: {code}"
+
+msgid "OTP verified successfully"
+msgstr "OTP muvaffaqiyatli tasdiqlandi"
+
+msgid "Monday"
+msgstr "Dushanba"
+
+msgid "Tuesday"
+msgstr "Seshanba"
+
+msgid "Wednesday"
+msgstr "Chorshanba"
+
+msgid "Thursday"
+msgstr "Payshanba"
+
+msgid "Friday"
+msgstr "Juma"
+
+msgid "Saturday"
+msgstr "Shanba"
+
+msgid "Sunday"
+msgstr "Yakshanba"
+
+msgid "Branch or appointment not found."
+msgstr "Filial yoki randevu topilmadi."
+
+msgid "You already have a booking for this slot."
+msgstr "Sizda ushbu vaqt uchun allaqachon bron mavjud."
+
+msgid "This car is already booked for this slot."
+msgstr "Bu mashina ushbu vaqt uchun allaqachon band qilingan."
+
+msgid "This time slot is already full."
+msgstr "Ushbu vaqt bandi allaqachon to'ldirilgan."
+
+msgid "Booking created successfully."
+msgstr "Bron muvaffaqiyatli yaratildi."
+
+msgid "Booking updated successfully."
+msgstr "Bron muvaffaqiyatli yangilandi."
+
+msgid "Branch is required for pickup orders"
+msgstr "Olib ketish buyurtmalari uchun filialni ko'rsatish shart"
+
+msgid "Address is required for delivery orders"
+msgstr "Yetkazib berish buyurtmalari uchun manzilni ko'rsatish shart"
+
+msgid "Card ID is required when payment method is Card"
+msgstr "To'lov usuli 'Karta' bo'lganda karta ID sini ko'rsatish shart"
+
+msgid "Pickup time is required for pickup orders"
+msgstr "Olib ketish buyurtmalari uchun olib ketish vaqtni ko'rsatish shart"
+
+msgid "Pickup time must be at least tomorrow"
+msgstr "Olib ketish vaqti eng kamida ertaga bo'lishi kerak"
+
+msgid "Invalid or expired promo code"
+msgstr "Noto'g'ri yoki muddati o'tgan promo kod"
+
+msgid "You can only rate completed orders"
+msgstr "Siz faqat yakunlangan buyurtmalarni baholay olasiz"
+
+msgid "You can only rate your own orders"
+msgstr "Siz faqat o'zingizning buyurtmalaringizni baholay olasiz"
+
+msgid "You have already rated this order"
+msgstr "Siz bu buyurtmani allaqachon baholagansiz"
+
+msgid "Order is required"
+msgstr "Buyurtma talab qilinadi"
+
+msgid "Invalid payment method. Choose from MULTICARD, CARD, CASH, or UZUM."
+msgstr "Noto'g'ri to'lov usuli. MULTICARD, CARD, CASH yoki UZUM dan tanlang."
+
+msgid "Story marked as read"
+msgstr "Hikoya o'qilgan deb belgilandi"
+
+msgid "You are not authorized to mark this story as viewed"
+msgstr "Siz bu hikoyani ko'rilgan  deb belgilash huquqiga ega emassiz"
+
+msgid "Car number is not valid in Uzbekistan"
+msgstr "Avtomobil raqami O‘zbekistonda yaroqli emas"
+
+msgid "Order amount exceeds the maximum limit of %(max_amount)s"
+msgstr "Buyurtma summasi maksimal ruxsat etilgan %(max_amount)s miqdoridan oshib ketdi"
+
+msgid "Cashback"
+msgstr "Keshbek"
+
+msgid "Mixed"
+msgstr "Aralash"
+
+msgid "Invalid payment method. Choose from {}"
+msgstr "Noto'g'ri to'lov usuli. Quyidagilardan tanlang: {}"
+
+msgid "Balance can only be used with BALANCE, MIXED, or online payment methods"
+msgstr "Keshbek faqat keshbek, aralash yoki onlayn to'lov usullari bilan ishlatilishi mumkin"
+
+msgid "Secondary payment method is required for MIXED payments"
+msgstr "Aralash to'lovlar uchun ikkinchi to'lov usuli talab qilinadi"
+
+msgid "Cashback balance amount is not more than {min_amount}."
+msgstr "Keshbek balansi miqdori ruxsat etilgan {min_amount} summadan kam."
+
+msgid "Insufficient cashback balance to cover order amount"
+msgstr "Buyurtma miqdorini qoplash uchun keshbek balansi yetarli emas"
+
+msgid "Amount is less than 500 UZS after cashback deduction"
+msgstr "Keshbek chegirilgandan so'ng miqdor 500 so'mdan kam"
+
+msgid "Order amount is more than {max_amount} to use cashback."
+msgstr "Keshbek ishlatish uchun buyurtma summasi {max_amount} dan oshadi."
+
+msgid "Anonymous"
+msgstr "Anonim"
+
+msgid "Order has been rated"
+msgstr "Buyurtma baholandi"
+
+msgid "Order rating has been deleted"
+msgstr "Buyurtma baholanishi o'chirildi"
+
+msgid "Product has been rated"
+msgstr "Mahsulot baholandi"
+
+msgid "Product rating has been deleted"
+msgstr "Mahsulot baholanishi o'chirildi"
+
+msgid "Oil change has been rated"
+msgstr "Moy almashtirish baholandi"
+
+msgid "Oil change rating deleted successfully"
+msgstr "Moy almashtirish baholanishi muvaffaqiyatli o'chirildi"
+
+msgid "Order Items"
+msgstr "Buyurtma Elementlari"
+
+msgid "Item"
+msgstr "Mahsulot"
+
+msgid "Quantity x Price/Units"
+msgstr "Soni x Narx/Birinchi"
+
+msgid "Total"
+msgstr "Jami"
+
+msgid "Bonuses"
+msgstr "Bonuslar"
+
+msgid "Added Tariff - %"
+msgstr "Qo'shilgan Ta'rif - %"
+
+msgid "Current Balance"
+msgstr "Hozirgi balans"
+
+msgid "Payment"
+msgstr "To'lov"
+
+msgid "Total Amount"
+msgstr "Jami miqdor"
+
+msgid "Payment Method"
+msgstr "To'lov usuli"
+
+msgid "Thank you for your purchase!"
+msgstr "Xaridingiz uchun rahmat!"
+
+msgid "No balance available"
+msgstr "Bu foydalanuvchi uchun balans mavjud emas"
+
+msgid "Requested balance amount exceeds available"
+msgstr "So'ralgan balans summasi mavjud balansdan oshib ketdi"
+
+msgid "Requested balance amount is not enough to pay the order"
+msgstr "So'ralgan balans summasi buyurtmani to'lash uchun yetarli emas"
+
+msgid "Requested balance amount exceeds the order amount after discounts"
+msgstr "So'ralgan balans summasi chegirmalardan keyin buyurtma summasidan oshib ketdi"
+
+msgid "Selected products have been removed from your basket."
+msgstr "Tanlangan mahsulotlar savatingizdan o'chirildi."
+
+msgid "Order status cannot be COMPLETED without payment status being COMPLETED"
+msgstr "To'lov holati TUGALLANMASdan buyurtma holati TUGALLANMAYDI"
+
+msgid "Price cannot be None"
+msgstr "Narx Nol bo'lishi mumkin emas"
+
+
+msgid "The non-cashback payment must cover at least 500 units for mixed payments"
+msgstr "Aralash to'lovlar uchun naqd pulsiz to'lov kamida 500 birlikni qoplashi kerak"
+
+msgid "Order created successfully"
+msgstr "Buyurtma muvaffaqiyatli yaratildi"
+
+msgid "No order name"
+msgstr "Order raqami topilmadi"
+
+msgid "Invalid promo code"
+msgstr "Promo kod yaroqsiz"
+
+msgid "This promo code is not for you"
+msgstr "Bu promokod siz uchun emas"
+
+msgid "This promo code is not linked to a program"
+msgstr "Bu promokod dasturga biriktirilmagan"
+
+msgid "The program for this promo code is inactive"
+msgstr "Bu promokod uchun dastur nofaol"
+
+msgid "This promo code is not valid today"
+msgstr "Bu promokod bugungi sana uchun yaroqsiz"
+
+msgid "This promo code has expired"
+msgstr "Bu promokod eskirgan"
+
+msgid "This promo code has no remaining uses"
+msgstr "Bu promokodning foydalanish imkoniyatlari tugagan"
+
+msgid "No appointment found for this branch"
+msgstr "Ushbu filial uchun hech qanday band qilish topilmadi"
+
+msgid "Notification marked as read"
+msgstr "Bildirishnoma o‘qilgan deb belgilandi"
+
+msgid "All notifications marked as read"
+msgstr "Barcha bildirishnomalar o‘qilgan deb belgilandi"
+
+msgid "<#> Your verification code to access the Carland system is: {code}. Please do not share this code with anyone.\n\n{hash}"
+msgstr "<#> Carland tizimiga kirish uchun tasdiqlash kodi: {code}. Iltimos, ushbu kodni hech kimga bermang.\n\n{hash}"

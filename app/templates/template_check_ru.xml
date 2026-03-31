@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Счет-фактура</title>
+    <style>
+        th, td { padding: 4px; font-size: 10px; }
+        h5 { font-size: 14px; }
+        p { margin: 0; font-size: 12px; }
+        hr { width: 100%; border: none; border-top: 1px solid black; opacity: 1; }
+        .text-center { text-align: center; }
+    </style>
+</head>
+<body>
+    <div>
+        {% if company_logo %}
+            <img src="{{ company_logo }}" style="max-height: 45px;" alt="Логотип">
+        {% endif %}
+        <p class="text-center"><strong>{{ company_name }}</strong></p>
+        <p class="text-center"><strong>{{ company_city }}, {{ company_street }}</strong></p>
+    </div>
+    <div>
+        <p>Кассир: {{ cashier_name }}</p>
+        <p>Телефон: {{ company_phone }}</p>
+        <p>Продажа №: {{ order_number }}</p>
+        <p>Заказ №: {{ order_id }}</p>
+        <p>Покупатель: {{ customer_name }}</p>
+        <p>Дата: {{ order_date }}</p>
+    </div>
+    <hr>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Продукт</th>
+                <th>Количество</th>
+                <th>Цена</th>
+                <th>Сумма</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ products_rows|safe }}
+        </tbody>
+    </table>
+    <div>
+        <h5 class="text-center">Бонусы</h5>
+        <p>Текущий баланс: {{ current_balance }}</p>
+        <p>Использовано: {{ cashback_used }}</p>
+        <p>Добавлено: {{ cashback_added }}</p>
+        <p>Статус: {{ loyalty_status }} - {{ cashback_percentage }}%</p>
+    </div>
+    <hr>
+    <p>Итого: {{ total_amount }} {{ currency }}</p>
+    <p>Способ оплаты: {{ payment_method }} - {{ payment_amount }} {{ currency }}</p>
+    <hr>
+    <p class="text-center"><strong>Спасибо за покупку!</strong></p>
+    <hr>
+    <p>FM номер: {{ fm_num }}</p>
+    <p>Фискальный код: {{ f_num }}</p>
+    <h5 class="text-center">Налоговый QR-код</h5>
+    {% if qr_url %}
+        <img src="{{ qr_url }}" alt="QR-код">
+    {% endif %}
+</body>
+</html>
