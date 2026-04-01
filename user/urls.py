@@ -13,10 +13,12 @@ from .views import (
     SendPhoneChangeOTPView,
     VerifyPhoneChangeOTPView,
     DeleteUserByPhoneOTPView,
+    UserShareInfoView,
 )
 
 router.register(r"all", UserViewSet, basename="all")
 router.register(r"address", AddressViewSet, basename="address")
+router.register(r"share-info", UserShareInfoView, basename="share-info")
 
 urlpatterns = [
     path("token/", jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair"),
