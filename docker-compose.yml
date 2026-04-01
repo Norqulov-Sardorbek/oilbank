@@ -16,7 +16,7 @@ services:
       - /home/ubuntu/.data/media:/home/user/web/media/
       - .:/home/user/web/
     ports:
-      - "8050:8000"
+      - "8005:8000"
     restart: always
     env_file:
       - ./.env

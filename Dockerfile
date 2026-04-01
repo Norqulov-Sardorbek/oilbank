@@ -18,7 +18,7 @@ RUN apt-get update && \
 
 # Copy requirements and install Python dependencies
 COPY --chown=user:user requirements*.txt ./
-RUN pip install --upgrade pip setuptools && \
+RUN pip install --upgrade pip setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy application code (ensure proper permissions)
@@ -45,5 +45,5 @@ COPY entrypoint.sh /home/user/web/entrypoint.sh
 RUN chmod +x /wait-for-it.sh /home/user/web/entrypoint.sh
 USER user
 
-EXPOSE 8050
+EXPOSE 8005
 ENTRYPOINT ["/wait-for-it.sh", "db:5432", "--", "sh", "/home/user/web/entrypoint.sh"]
