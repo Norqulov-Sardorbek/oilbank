@@ -74,7 +74,7 @@ INSTALLED_APPS = [
     # djangoapps
     "corsheaders",
     "rest_framework",
-    # "drf_yasg",
+    "drf_yasg",
     "ckeditor",
     "rest_framework_simplejwt",
     "drf_spectacular",

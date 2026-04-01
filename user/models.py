@@ -316,3 +316,16 @@ class Referral(models.Model):
 
     def __str__(self):
         return f"{self.referrer.phone} referred {self.referred.phone}"
+
+
+
+class UserShareInfo(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="shared_info")
+    unique_code = models.CharField(max_length=255, unique=True)
+    phone_number_allowed = models.BooleanField(default=False)
+
+    class Meta:
+        unique_together = ("user", "shared_with")
+
+    def __str__(self):
+        return f"{self.user.phone} shared info with {self.shared_with.phone}"

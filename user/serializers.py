@@ -2,22 +2,18 @@
 import datetime
 import random
 
-from rest_framework.response import Response
 
 # global imports
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework import serializers, status
-from rest_framework.exceptions import ValidationError
+from rest_framework import serializers
 from django.core.validators import RegexValidator
 from django.utils import timezone
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
-from app.serializers.order import RegionSerializer, DistrictSerializer
-from config.settings import APP_SMS_HASH
 
 # local imports
-from .models import User, UserInfo, OTP, Address, MessageLog, Referral
+from .models import User, UserInfo, OTP, Address, MessageLog, Referral,UserShareInfo
 from .tasks import send_sms
 from fcm_django.models import FCMDevice
 import logging
@@ -416,3 +412,15 @@ class ChangePhoneVerifyOTPSerializer(serializers.Serializer):
     phone = serializers.CharField(max_length=20, validators=[phone_regex])
     code = serializers.CharField(max_length=6)
     is_new = serializers.BooleanField()
+
+
+
+class UserShareInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserShareInfo
+        fields = [
+            "id",
+            "user",
+            "share_count",
+            "last_shared_at",
+        ]

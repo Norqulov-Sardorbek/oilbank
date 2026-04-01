@@ -7,9 +7,9 @@ services:
       context: .
       dockerfile: Dockerfile
     command: >
-      sh -c "python manage.py collectstatic --noinput &&
-             python manage.py migrate &&
-             python manage.py migrate token_blacklist &&
+      sh -c "python3 manage.py collectstatic --noinput &&
+             python3 manage.py migrate &&
+             python3 manage.py migrate token_blacklist &&
              gunicorn --bind 0.0.0.0:8000 config.wsgi:application --workers 4"
     volumes:
       - /home/ubuntu/.data/static:/home/user/web/staticfiles/
