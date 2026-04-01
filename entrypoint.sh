@@ -14,6 +14,6 @@ fi
 chown -R user:user /home/user/web/media
 chown -R user:user /home/user/web/staticfiles
 
-python3 manage.py migrate
+python manage.py migrate
 
 exec "$@"

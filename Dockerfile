@@ -15,7 +15,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     postgresql-client libpq-dev gcc python3-dev libjpeg-dev zlib1g-dev gettext bash && \
     rm -rf /var/lib/apt/lists/*
-RUN ln -s /usr/local/bin/python3 /usr/local/bin/python
+
 # Copy requirements and install Python dependencies
 COPY --chown=user:user requirements*.txt ./
 RUN pip install --no-cache-dir --upgrade pip && \
