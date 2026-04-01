@@ -48,7 +48,7 @@ services:
 
   db:
     image: postgres:16
-    container_name: postgres_db
+    container_name: carland_db
     env_file:
       - .env
     environment:
