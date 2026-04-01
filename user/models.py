@@ -324,8 +324,6 @@ class UserShareInfo(models.Model):
     unique_code = models.CharField(max_length=255, unique=True)
     phone_number_allowed = models.BooleanField(default=False)
 
-    class Meta:
-        unique_together = ("user", "shared_with")
 
     def __str__(self):
-        return f"{self.user.phone} shared info with {self.shared_with.phone}"
+        return f"Share info for {self.user.phone} - Code: {self.unique_code} - Allowed: {self.phone_number_allowed}"
