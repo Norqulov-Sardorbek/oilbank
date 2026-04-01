@@ -18,7 +18,8 @@ RUN apt-get update && \
 
 # Copy requirements and install Python dependencies
 COPY --chown=user:user requirements*.txt ./
-RUN pip install --upgrade pip setuptools wheel && \
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy application code (ensure proper permissions)
