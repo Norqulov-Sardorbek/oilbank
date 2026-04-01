@@ -13,7 +13,6 @@ from .views import (
     SendPhoneChangeOTPView,
     VerifyPhoneChangeOTPView,
     DeleteUserByPhoneOTPView,
-    UserCardView,
 )
 
 router.register(r"all", UserViewSet, basename="all")
@@ -23,7 +22,6 @@ urlpatterns = [
     path("token/", jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", jwt_views.TokenRefreshView.as_view(), name="token_refresh"),
     path("profile/", UserInfoView.as_view(), name="profile"),
-    path("user-info/<int:user_id>/", UserCardView.as_view(), name="user_info"),
     path("send-otp/", SendOTPView.as_view(), name="send_otp"),
     path("verify-otp/", VerifyOTPView.as_view(), name="verify_otp"),
     path(

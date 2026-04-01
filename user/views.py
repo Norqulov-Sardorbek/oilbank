@@ -18,11 +18,12 @@ from django.views.generic import DetailView
 
 
 # local imports
-from .models import UserInfo, User, Address, OTP
+from .models import UserInfo, User, Address, OTP, UserShareInfo
 from .serializers import (
     UserSerializer,
     UserInfoSerializer,
     SendOTPSerializer,
+    UserShareInfoSerializer,
     VerifyOTPSerializer,
     AddressSerializer,
     ChangePhoneSerializer,
@@ -675,8 +676,11 @@ class VerifyPhoneChangeOTPView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-class UserCardView(DetailView):
-    model = UserInfo
-    template_name = "user/user_card.html"
-    context_object_name = "user"
-    pk_url_kwarg = "user_id"
+
+class UserShareInfoView(viewsets.ModelViewSet):
+    queryset = UserShareInfo.objects.all()
+    serializer_class = UserShareInfoSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return UserShareInfo.objects.filter(user=self.request.user)

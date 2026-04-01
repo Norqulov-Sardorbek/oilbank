@@ -416,11 +416,18 @@ class ChangePhoneVerifyOTPSerializer(serializers.Serializer):
 
 
 class UserShareInfoSerializer(serializers.ModelSerializer):
+    phone_number = serializers.SerializerMethodField()
     class Meta:
         model = UserShareInfo
         fields = [
             "id",
             "user",
-            "share_count",
-            "last_shared_at",
+            "unique_code",
+            "phone_number_allowed",
+            "phone_number",
         ]
+        
+    def get_phone_number(self, obj):
+        if obj.phone_number_allowed:
+            return obj.user.phone
+        return None
