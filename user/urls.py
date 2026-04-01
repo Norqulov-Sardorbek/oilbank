@@ -14,15 +14,19 @@ from .views import (
     VerifyPhoneChangeOTPView,
     DeleteUserByPhoneOTPView,
     UserShareInfoView,
+    CreateUserShareInfoView,
+    NotificationMessagesViewSet,
 )
 
 router.register(r"all", UserViewSet, basename="all")
 router.register(r"address", AddressViewSet, basename="address")
 router.register(r"share-info", UserShareInfoView, basename="share-info")
+router.register(r"notification-messages", NotificationMessagesViewSet, basename="notification-messages")
 
 urlpatterns = [
     path("token/", jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", jwt_views.TokenRefreshView.as_view(), name="token_refresh"),
+    path("share-info/create/", CreateUserShareInfoView.as_view(), name="create-share-info"),
     path("profile/", UserInfoView.as_view(), name="profile"),
     path("send-otp/", SendOTPView.as_view(), name="send_otp"),
     path("verify-otp/", VerifyOTPView.as_view(), name="verify_otp"),

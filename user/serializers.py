@@ -13,7 +13,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 # local imports
-from .models import User, UserInfo, OTP, Address, MessageLog, Referral,UserShareInfo
+from .models import NotificationMessages, User, UserInfo, OTP, Address, MessageLog, Referral,UserShareInfo
 from .tasks import send_sms
 from fcm_django.models import FCMDevice
 import logging
@@ -431,3 +431,8 @@ class UserShareInfoSerializer(serializers.ModelSerializer):
         if obj.phone_number_allowed:
             return obj.user.phone
         return None
+    
+class NotificationMessagesSerializer(serializers.Serializer):
+    class Meta:
+        model = NotificationMessages
+        fields = "__all__"

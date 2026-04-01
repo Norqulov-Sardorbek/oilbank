@@ -18,8 +18,9 @@ from django.views.generic import DetailView
 
 
 # local imports
-from .models import UserInfo, User, Address, OTP, UserShareInfo
+from .models import NotificationMessages, UserInfo, User, Address, OTP, UserShareInfo
 from .serializers import (
+    NotificationMessagesSerializer,
     UserSerializer,
     UserInfoSerializer,
     SendOTPSerializer,
@@ -684,3 +685,35 @@ class UserShareInfoView(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return UserShareInfo.objects.filter(user=self.request.user)
+    
+    
+class CreateUserShareInfoView(APIView):
+
+    def post(self, request):
+        data = request.data.copy()
+        unique_code = data.get("unique_code")
+        if UserShareInfo.objects.filter(unique_code=unique_code).exists():
+            return Response(
+                {"error": "Unique code already exists."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        share_info = UserShareInfo.objects.create(
+            user=request.user,
+            unique_code=unique_code,
+            phone_number_allowed=False,
+        )
+        return Response(
+            {
+                "id": share_info.id,
+                "user": share_info.user.id,
+                "unique_code": share_info.unique_code,
+                "phone_number_allowed": share_info.phone_number_allowed,
+            },
+            status=status.HTTP_201_CREATED,
+        )
+        
+class NotificationMessagesViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = NotificationMessages.objects.all()
+    serializer_class = NotificationMessagesSerializer
+    permission_classes = [IsAuthenticated]
+

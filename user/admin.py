@@ -1,4 +1,4 @@
-from .models import User, UserInfo, OTP, MessageLog, Address, MulticardConfig, Referral,UserShareInfo
+from .models import User, UserInfo, OTP, MessageLog, Address, MulticardConfig, Referral,UserShareInfo,NotificationMessages
 from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
@@ -184,3 +184,9 @@ class UserShareInfoAdmin(admin.ModelAdmin):
     list_display = ("user", "unique_code", "phone_number_allowed")
     search_fields = ("user__phone", "unique_code")
     list_filter = ("phone_number_allowed",)
+    
+@admin.register(NotificationMessages)
+class NotificationMessagesAdmin(admin.ModelAdmin):
+    list_display = ("message",)
+    search_fields = ("message",)
+    
