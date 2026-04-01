@@ -34,9 +34,6 @@ RUN chown -R user:user /home/user/web && \
 USER user
 RUN chmod -R 755 /home/user/web/staticfiles /home/user/web/media
 
-# Run Django commands
-RUN python manage.py collectstatic --noinput && \
-    python manage.py compilemessages -l en -l ru -l uz
 
 # Prepare entrypoint scripts
 USER root
