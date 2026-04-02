@@ -8,8 +8,12 @@ class EduVideo(models.Model):
     class VideoType(models.TextChoices):
         URL = "url", "Url"
         FILE = "file", "File"
-    title = models.CharField(max_length=255)
-    description = models.TextField()
+    title_uz = models.CharField(max_length=255)
+    title_ru = models.CharField(max_length=255, null=True, blank=True)
+    title_en = models.CharField(max_length=255, null=True, blank=True)
+    description_uz = models.TextField()
+    description_ru = models.TextField(null=True, blank=True)
+    description_en = models.TextField(null=True, blank=True)
     video_type = models.CharField(max_length=20, choices=VideoType.choices, default=VideoType.URL)
     video_url = models.URLField(null=True, blank=True)
     video_file = models.FileField(upload_to="edu_videos/", null=True, blank=True)

@@ -1050,6 +1050,6 @@ class OdooConnectorLogAdmin(admin.ModelAdmin):
 
 @admin.register(EduVideo)
 class EduVideoAdmin(admin.ModelAdmin):
-    list_display = ("title", "description", "video_type", "video_url")
-    search_fields = ("title", "description")
+    list_display = ("title_uz", "description_uz", "video_type", "video_url")
+    search_fields = ("title_uz", "description_uz")
     list_filter = ("video_type",)
