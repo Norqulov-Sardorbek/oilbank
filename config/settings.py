@@ -143,6 +143,7 @@ MIDDLEWARE = [
     "utils.middlewares.IgnoreTokenOnLoginMiddleware",
     # defaults
     "corsheaders.middleware.CorsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -378,7 +379,7 @@ FCM_DJANGO_SETTINGS = {
 
 
 FIREBASE_CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials', 'carland-d17f7-firebase-adminsdk-fbsvc-673594dd35.json')
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Initialize Firebase Admin SDK
 cred = credentials.Certificate(FIREBASE_CREDENTIALS_PATH)
 firebase_admin.initialize_app(cred)

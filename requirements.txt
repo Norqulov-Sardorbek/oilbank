@@ -29,3 +29,4 @@ celery[redis]
 fcm-django==2.0.0
 firebase-admin==6.2.0
 moviepy==1.0.3
+whitenoise==6.12.0
