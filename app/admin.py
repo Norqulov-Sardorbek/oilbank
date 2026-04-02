@@ -85,6 +85,7 @@ from .models.card import (
     Cashback,
     BalanceUsageLimit,
 )
+from .models.edu_video import EduVideo
 from django.utils.translation import gettext_lazy as _
 
 
@@ -1045,3 +1046,10 @@ class OdooConnectorLogAdmin(admin.ModelAdmin):
 
     def has_change_permission(self, request, obj=None):
         return False
+
+
+@admin.register(EduVideo)
+class EduVideoAdmin(admin.ModelAdmin):
+    list_display = ("title", "description", "video_type", "video_url")
+    search_fields = ("title", "description")
+    list_filter = ("video_type",)
