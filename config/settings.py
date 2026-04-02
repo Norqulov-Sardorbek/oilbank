@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # djangoapps
     "corsheaders",
+    "whitenoise",
     "rest_framework",
     "drf_yasg",
     "ckeditor",
