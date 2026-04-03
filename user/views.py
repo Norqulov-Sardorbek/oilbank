@@ -712,8 +712,12 @@ class CreateUserShareInfoView(APIView):
             status=status.HTTP_201_CREATED,
         )
         
-class NotificationMessagesViewSet(viewsets.ReadOnlyModelViewSet):
+class NotificationMessagesViewSet(viewsets.ModelViewSet):
     queryset = NotificationMessages.objects.all()
     serializer_class = NotificationMessagesSerializer
-    permission_classes = [IsAuthenticated]
+    
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            return [IsAuthenticated()]
+        return [IsAdminUser()]
 
