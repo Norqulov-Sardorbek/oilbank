@@ -16,6 +16,7 @@ from .views import (
     UserShareInfoView,
     CreateUserShareInfoView,
     NotificationMessagesViewSet,
+    SendNotificationView
 )
 
 router.register(r"all", UserViewSet, basename="all")
@@ -27,6 +28,7 @@ urlpatterns = [
     path("token/", jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", jwt_views.TokenRefreshView.as_view(), name="token_refresh"),
     path("share-info/create/", CreateUserShareInfoView.as_view(), name="create-share-info"),
+    path("send-notification/", SendNotificationView.as_view(), name="send-notification"),
     path("profile/", UserInfoView.as_view(), name="profile"),
     path("send-otp/", SendOTPView.as_view(), name="send_otp"),
     path("verify-otp/", VerifyOTPView.as_view(), name="verify_otp"),

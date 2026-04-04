@@ -187,6 +187,6 @@ class UserShareInfoAdmin(admin.ModelAdmin):
     
 @admin.register(NotificationMessages)
 class NotificationMessagesAdmin(admin.ModelAdmin):
-    list_display = ("message",)
-    search_fields = ("message",)
+    list_display = ("message_uz", "message_ru", "message_en")
+    search_fields = ("message_uz", "message_ru", "message_en")
     

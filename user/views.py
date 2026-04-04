@@ -16,6 +16,8 @@ from drf_spectacular.types import OpenApiTypes
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView
 
+from app.utils.notification_utils import create_notification
+
 
 # local imports
 from .models import NotificationMessages, UserInfo, User, Address, OTP, UserShareInfo
@@ -721,3 +723,54 @@ class NotificationMessagesViewSet(viewsets.ModelViewSet):
             return [IsAuthenticated()]
         return [IsAdminUser()]
 
+class SendNotificationView(APIView):
+    @swagger_auto_schema(
+        operation_summary="Send custom notification",
+        operation_description="Send a custom notification to a user based on a predefined message template.",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                "message_id": openapi.Schema(type=openapi.TYPE_INTEGER, description="ID of the notification message template"),
+                "user_id": openapi.Schema(type=openapi.TYPE_INTEGER, description="ID of the user to send the notification to"),
+            },
+            required=["message_id", "user_id"],
+        ),
+        responses={
+            200: openapi.Response(
+                description="Notification sent successfully",
+                examples={
+                    "application/json": {"message": "Notification sent successfully"}
+                },
+            ),
+            404: openapi.Response(
+                description="Notification message or user not found",
+                examples={
+                    "application/json": {"error": "Notification message not found"}
+                },
+            ),
+        },
+    )
+    def post(self, request):
+        message_id = request.data.get("message_id")
+        user_id = request.data.get("user_id")
+        try:
+            message = NotificationMessages.objects.get(id=message_id)
+            user = UserInfo.objects.get(id=user_id)
+            # Logic to send the notification to users goes here
+            create_notification(
+                notification_type='custom_message',
+                title={
+                    'uz': "Avto xabarnoma",
+                    'ru': "Авто уведомление",
+                    'en': "Auto Notification"
+                },
+                message={
+                    'uz': message.message_uz,
+                    'ru': message.message_ru,
+                    'en': message.message_en
+                },
+                user=user,
+            )
+            return Response({"message": "Notification sent successfully"}, status=status.HTTP_200_OK)
+        except NotificationMessages.DoesNotExist:
+            return Response({"error": "Notification message not found"}, status=status.HTTP_404_NOT_FOUND)

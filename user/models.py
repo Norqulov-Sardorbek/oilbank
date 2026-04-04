@@ -329,4 +329,6 @@ class UserShareInfo(models.Model):
         return f"Share info for {self.user.phone} - Code: {self.unique_code} - Allowed: {self.phone_number_allowed}"
     
 class NotificationMessages(models.Model):
-    message = models.CharField(max_length=255)
+    message_uz = models.CharField(max_length=255)
+    message_ru = models.CharField(max_length=255,null=True, blank=True)
+    message_en = models.CharField(max_length=255,null=True, blank=True)
