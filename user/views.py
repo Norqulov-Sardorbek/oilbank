@@ -14,7 +14,6 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from drf_spectacular.types import OpenApiTypes
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import DetailView
 
 from app.utils.notification_utils import create_notification
 
@@ -748,22 +747,35 @@ class SendNotificationView(APIView):
                     "application/json": {"error": "Notification message not found"}
                 },
             ),
+            400: openapi.Response(
+                description="Bad request",
+                examples={
+                    "application/json": {"error": "Both message_id and user_id are required."}
+                },
+            ),
         },
     )
     def post(self, request):
         message_id = request.data.get("message_id")
         user_id = request.data.get("user_id")
+        if not message_id or not user_id:
+            return Response(
+                {"error": "Both message_id and user_id are required."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         try:
             message = NotificationMessages.objects.get(id=message_id)
             user = UserInfo.objects.get(id=user_id)
             # Logic to send the notification to users goes here
             create_notification(
+                content_object=None,
                 notification_type='custom_message',
                 title={
                     'uz': "Avto xabarnoma",
                     'ru': "Авто уведомление",
                     'en': "Auto Notification"
                 },
+                context=None,
                 message={
                     'uz': message.message_uz,
                     'ru': message.message_ru,
