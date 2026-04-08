@@ -322,7 +322,7 @@ class Referral(models.Model):
 class UserShareInfo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="shared_info")
     unique_code = models.ForeignKey(QRCode, on_delete=models.CASCADE, related_name="shared_info")
-    phone_number_allowed = models.BooleanField(default=False)
+    phone_number_allowed = models.BooleanField(default=True)
 
 
     def __str__(self):
