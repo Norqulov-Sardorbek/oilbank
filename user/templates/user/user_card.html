@@ -158,6 +158,34 @@ button:disabled {
 .status.loading {
     color: #f97316;
 }
+.phone {
+    margin-top: 8px;
+}
+
+.phone-link {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff7a18, #ff5722);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.phone-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(255, 87, 34, 0.3);
+}
+
+.phone.disabled {
+    background: #f1f5f9;
+    color: #9ca3af;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+}
 
 /* 🔥 MOBILE */
 @media (max-width: 480px) {
@@ -168,6 +196,7 @@ button:disabled {
     .full-name {
         font-size: 20px;
     }
+    
 }
     </style>
 </head>
@@ -191,13 +220,17 @@ button:disabled {
                 {% endif %}
             </div>
 
-            {% if user.phone  and share_info.phone_number_allowed %}
-            <div class="phone">
-                    <a href="tel:{{ user.phone }}">{{ user.phone }}</a>
-                {% else %}
-                    Telefon raqam yashirilgan
+           {% if user.phone and share_info.phone_number_allowed %}
+                <div class="phone">
+                    <a href="tel:{{ user.phone }}" class="phone-link">
+                        📞 {{ user.phone }}
+                    </a>
                 </div>
-                {% endif %}
+            {% else %}
+                <div class="phone disabled">
+                    🔒 Telefon raqam yashirilgan
+                </div>
+            {% endif %}
         </div>
 
         <div class="message-box">
