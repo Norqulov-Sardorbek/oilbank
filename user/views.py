@@ -690,7 +690,22 @@ class UserShareInfoView(viewsets.ModelViewSet):
     
 class CreateUserShareInfoView(APIView):
     permission_classes = [IsAuthenticated]
-
+    @swagger_auto_schema(
+        operation_summary="Create user share info",
+        operation_description="Create share information for the authenticated user.",
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                "unique_code": openapi.Schema(
+                    type=openapi.TYPE_STRING,
+                    description="Unique code for sharing",
+                ),
+            },
+            required=["unique_code"],
+        ),
+        responses={201: UserShareInfoSerializer, 400: OpenApiTypes.OBJECT},
+        tags=["User Share Info"],
+    )
     def post(self, request):
         serializer = UserShareInfoSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
