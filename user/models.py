@@ -13,7 +13,7 @@ from uuid import uuid4
 from django.db import models, transaction
 from app.models.log_connection import SyncSoftDeleteMixin
 from app.utils.utils import OdooSync
-
+from app.models.qr_codes import QRCode
 logger = logging.getLogger(__name__)
 
 
@@ -321,7 +321,7 @@ class Referral(models.Model):
 
 class UserShareInfo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="shared_info")
-    unique_code = models.CharField(max_length=255, unique=True)
+    unique_code = models.ForeignKey(QRCode, on_delete=models.CASCADE, related_name="shared_info")
     phone_number_allowed = models.BooleanField(default=False)
 
 

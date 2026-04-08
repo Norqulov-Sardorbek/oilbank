@@ -689,29 +689,13 @@ class UserShareInfoView(viewsets.ModelViewSet):
     
     
 class CreateUserShareInfoView(APIView):
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        data = request.data.copy()
-        unique_code = data.get("unique_code")
-        if UserShareInfo.objects.filter(unique_code=unique_code).exists():
-            return Response(
-                {"error": "Unique code already exists."},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
-        share_info = UserShareInfo.objects.create(
-            user=request.user,
-            unique_code=unique_code,
-            phone_number_allowed=False,
-        )
-        return Response(
-            {
-                "id": share_info.id,
-                "user": share_info.user.id,
-                "unique_code": share_info.unique_code,
-                "phone_number_allowed": share_info.phone_number_allowed,
-            },
-            status=status.HTTP_201_CREATED,
-        )
+        serializer = UserShareInfoSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(user=request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
         
 class NotificationMessagesViewSet(viewsets.ModelViewSet):
     queryset = NotificationMessages.objects.all()

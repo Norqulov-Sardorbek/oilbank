@@ -14,6 +14,7 @@ from django.utils.translation import gettext_lazy as _
 
 # local imports
 from .models import NotificationMessages, User, UserInfo, OTP, Address, MessageLog, Referral,UserShareInfo
+from app.models.qr_codes import QRCode
 from .tasks import send_sms
 from fcm_django.models import FCMDevice
 import logging
@@ -416,7 +417,12 @@ class ChangePhoneVerifyOTPSerializer(serializers.Serializer):
 
 
 class UserShareInfoSerializer(serializers.ModelSerializer):
-    phone_number = serializers.SerializerMethodField()
+    phone_number = serializers.SerializerMethodField(read_only=True)
+    unique_code = serializers.SlugRelatedField(
+        slug_field="unique_code",
+        queryset=QRCode.objects.all(),
+    )
+
     class Meta:
         model = UserShareInfo
         fields = [
@@ -426,11 +432,23 @@ class UserShareInfoSerializer(serializers.ModelSerializer):
             "phone_number_allowed",
             "phone_number",
         ]
-        
+        read_only_fields = ["id", "phone_number"]
+
     def get_phone_number(self, obj):
         if obj.phone_number_allowed:
             return obj.user.phone
         return None
+
+    def validate_unique_code(self, value):
+        # value bu QRCode object bo'ladi
+        if UserShareInfo.objects.filter(unique_code=value).exists():
+            raise serializers.ValidationError(
+                "Bu QR code allaqachon boshqa userga ulangan."
+            )
+        return value
+
+    def create(self, validated_data):
+        return UserShareInfo.objects.create(**validated_data)
     
 class NotificationMessagesSerializer(serializers.Serializer):
     class Meta:
