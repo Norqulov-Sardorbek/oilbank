@@ -1,11 +1,12 @@
 from rest_framework import status, viewsets
 from rest_framework.response import Response
-
+from rest_framework.permissions import IsAuthenticated
 from app.models.qr_codes import QRCode
 from app.serializers.qr_codes import QRCodeSerializer
 
 
 class QRCodeViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = QRCode.objects.all()
     serializer_class = QRCodeSerializer
 

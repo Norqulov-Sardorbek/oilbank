@@ -682,14 +682,14 @@ class VerifyPhoneChangeOTPView(APIView):
 class UserShareInfoView(viewsets.ModelViewSet):
     queryset = UserShareInfo.objects.all()
     serializer_class = UserShareInfoSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         return UserShareInfo.objects.filter(user=self.request.user)
     
     
 class CreateUserShareInfoView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     @swagger_auto_schema(
         operation_summary="Create user share info",
         operation_description="Create share information for the authenticated user.",
