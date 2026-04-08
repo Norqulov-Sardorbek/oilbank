@@ -87,7 +87,7 @@ from .models.card import (
 )
 from .models.edu_video import EduVideo
 from django.utils.translation import gettext_lazy as _
-
+from .models.qr_codes import QRCode
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
@@ -1053,3 +1053,9 @@ class EduVideoAdmin(admin.ModelAdmin):
     list_display = ("title_uz", "description_uz", "video_type", "video_url")
     search_fields = ("title_uz", "description_uz")
     list_filter = ("video_type",)
+
+@admin.register(QRCode)
+class QRCodeAdmin(admin.ModelAdmin):
+    list_display = ("id", "unique_code", "image")
+    search_fields = ("unique_code",)
+    ordering = ("-id",)
