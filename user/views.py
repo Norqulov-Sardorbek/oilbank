@@ -793,7 +793,7 @@ class QRUserView(View):
     template_name = "user/user_card.html"
 
     def get(self, request, code, *args, **kwargs):
-        user_share_info = get_object_or_404(UserShareInfo, unique_code=code)
+        user_share_info = get_object_or_404(UserShareInfo, unique_code__unique_code=code)
         user = user_share_info.user
         user_info = UserInfo.objects.filter(user_id=user.id).first()
         
