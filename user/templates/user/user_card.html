@@ -254,7 +254,7 @@ button:disabled {
                 results.forEach((item) => {
                     const option = document.createElement("option");
                     option.value = item.id;
-                    option.textContent = item.title || item.name || item.message || `Option ${item.id}`;
+                    option.textContent = item.message_uz || item.message_ru || item.message_en || `Option ${item.id}`;
                     messageSelect.appendChild(option);
                 });
 
