@@ -452,4 +452,9 @@ class UserShareInfoSerializer(serializers.ModelSerializer):
 class NotificationMessagesSerializer(serializers.Serializer):
     class Meta:
         model = NotificationMessages
-        fields = "__all__"
+        fields = [
+            "id",
+            "message_uz",
+            "message_ru",
+            "message_en",
+        ]
