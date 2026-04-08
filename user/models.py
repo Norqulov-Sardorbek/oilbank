@@ -195,6 +195,9 @@ class UserInfo(models.Model):
             transaction.on_commit(trigger_user_sync)
         else:
             trigger_user_sync()
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}".strip() if self.first_name or self.last_name else None
 
     def __str__(self):
         return f"{self.first_name} - {self.last_name} - {self.user.phone}"

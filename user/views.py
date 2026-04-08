@@ -1,11 +1,12 @@
 # global imports
 from rest_framework import viewsets, serializers
+from django.shortcuts import render,  get_object_or_404
 from rest_framework.exceptions import MethodNotAllowed, ValidationError
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework.views import APIView, View
 from django.utils import timezone
 from datetime import timedelta
 import random
@@ -718,7 +719,7 @@ class NotificationMessagesViewSet(viewsets.ModelViewSet):
     
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
-            return [IsAuthenticated()]
+            return [AllowAny()]
         return [IsAdminUser()]
 
 class SendNotificationView(APIView):
@@ -785,3 +786,21 @@ class SendNotificationView(APIView):
             return Response({"message": "Notification sent successfully"}, status=status.HTTP_200_OK)
         except NotificationMessages.DoesNotExist:
             return Response({"error": "Notification message not found"}, status=status.HTTP_404_NOT_FOUND)
+
+
+
+class QRUserView(View):
+    template_name = "user/user_card.html"
+
+    def get(self, request, code, *args, **kwargs):
+        user_share_info = get_object_or_404(UserShareInfo, unique_code=code)
+        user = user_share_info.user
+        user_info = UserInfo.objects.filter(user_id=user.id).first()
+        
+
+        context = {
+            "user": user,
+            "share_info": user_share_info,
+            "user_info": user_info,
+        }
+        return render(request, self.template_name, context)
