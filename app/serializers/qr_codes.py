@@ -25,13 +25,14 @@ class QRCodeSerializer(serializers.ModelSerializer):
                 return code
 
     def generate_qr_image(self, unique_code: str) -> ContentFile:
+        url = f"https://carland.upgrow.uz/qr/{unique_code}"
         qr = qrcode.QRCode(
         version=None,
         error_correction=ERROR_CORRECT_H,
         box_size=10,
         border=1,
     )
-        qr.add_data(unique_code)
+        qr.add_data(url)
         qr.make(fit=True)
 
         qr_img = qr.make_image(
