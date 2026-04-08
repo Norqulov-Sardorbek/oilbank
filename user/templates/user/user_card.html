@@ -7,167 +7,168 @@
 
     <style>
         * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+/* 🔥 BODY */
+body {
+    min-height: 100vh;
+    background: #f5f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-        .card {
-            width: 100%;
-            max-width: 420px;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-radius: 24px;
-            padding: 28px 22px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
+/* 🔥 CARD */
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    color: #1f2937;
+}
 
-        .profile {
-            text-align: center;
-            margin-bottom: 28px;
-        }
+/* 🔥 PROFILE */
+.profile {
+    text-align: center;
+    margin-bottom: 24px;
+}
 
-        .avatar-wrapper {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 16px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, #ffffff, #f9a8d4, #c4b5fd);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-        }
+/* 🔥 AVATAR */
+.avatar-wrapper {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #ff7a18, #ff5722);
+}
 
-        .avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            background: #fff;
-        }
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+}
 
-        .full-name {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            line-height: 1.3;
-            word-break: break-word;
-        }
+/* 🔥 NAME */
+.full-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #111827;
+}
 
-        .phone {
-            font-size: 15px;
-            opacity: 0.95;
-            background: rgba(255, 255, 255, 0.12);
-            display: inline-block;
-            padding: 8px 14px;
-            border-radius: 999px;
-            word-break: break-word;
-        }
+/* 🔥 PHONE */
+.phone {
+    font-size: 14px;
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 999px;
+    color: #475569;
+    display: inline-block;
+}
 
-        .message-box {
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 18px;
-            padding: 18px;
-        }
+/* 🔥 MESSAGE BOX */
+.message-box {
+    margin-top: 20px;
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 16px;
+}
 
-        .message-box h3 {
-            font-size: 18px;
-            margin-bottom: 14px;
-        }
+/* 🔥 TITLE */
+.message-box h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #111827;
+}
 
-        .field {
-            margin-bottom: 14px;
-        }
+/* 🔥 FIELD */
+.field {
+    margin-bottom: 12px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 600;
-        }
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
 
-        select {
-            width: 100%;
-            padding: 12px 14px;
-            border-radius: 12px;
-            border: none;
-            outline: none;
-            font-size: 15px;
-            background: #fff;
-            color: #111827;
-        }
+/* 🔥 SELECT */
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+    color: #111827;
+}
 
-        button {
-            width: 100%;
-            padding: 13px 16px;
-            border: none;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.25s ease;
-        }
+/* 🔥 BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff7a18, #ff5722);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
 
-        button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 12px 24px rgba(34, 197, 94, 0.3);
-        }
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(255, 87, 34, 0.3);
+}
 
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
-        .status {
-            margin-top: 12px;
-            font-size: 14px;
-            text-align: center;
-            min-height: 20px;
-        }
+/* 🔥 STATUS */
+.status {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
 
-        .status.success {
-            color: #bbf7d0;
-        }
+.status.success {
+    color: #16a34a;
+}
 
-        .status.error {
-            color: #fecaca;
-        }
+.status.error {
+    color: #dc2626;
+}
 
-        .status.loading {
-            color: #e9d5ff;
-        }
+.status.loading {
+    color: #f97316;
+}
 
-        @media (max-width: 480px) {
-            .card {
-                padding: 22px 16px;
-            }
+/* 🔥 MOBILE */
+@media (max-width: 480px) {
+    .card {
+        padding: 20px 14px;
+    }
 
-            .full-name {
-                font-size: 21px;
-            }
-
-            .phone {
-                font-size: 14px;
-            }
-        }
+    .full-name {
+        font-size: 20px;
+    }
+}
     </style>
 </head>
 <body>
@@ -190,9 +191,9 @@
                 {% endif %}
             </div>
 
+            {% if user.phone  and share_info.phone_number_allowed %}
             <div class="phone">
-                {% if user.phone  and share_info.phone_number_allowed%}
-                    {{ user.phone_number }}
+                    <a href="tel:{{ user.phone }}">{{ user.phone }}</a>
                 {% else %}
                     Telefon raqam yashirilgan
                 {% endif %}
