@@ -3,248 +3,494 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Card</title>
+    <title>Carland | User Card</title>
 
     <style>
         * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-/* 🔥 BODY */
-body {
-    min-height: 100vh;
-    background: #f5f6f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+        :root {
+            --orange-1: #ff6a00;
+            --orange-2: #ff4d00;
+            --orange-3: #ff7f2a;
+            --dark-1: #0b0d10;
+            --dark-2: #111418;
+            --dark-3: #171b20;
+            --line: rgba(255, 255, 255, 0.08);
+            --text: #ffffff;
+            --muted: rgba(255, 255, 255, 0.72);
+        }
 
-/* 🔥 CARD */
-.card {
-    width: 100%;
-    max-width: 420px;
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 24px 18px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    color: #1f2937;
-}
+        body {
+            min-height: 100vh;
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background:
+                linear-gradient(rgba(7, 8, 10, 0.78), rgba(7, 8, 10, 0.78)),
+                repeating-linear-gradient(
+                    -35deg,
+                    rgba(255,255,255,0.035) 0px,
+                    rgba(255,255,255,0.035) 18px,
+                    rgba(255,255,255,0.01) 18px,
+                    rgba(255,255,255,0.01) 42px
+                ),
+                linear-gradient(180deg, #1a1d21 0%, #090a0c 100%);
+        }
 
-/* 🔥 PROFILE */
-.profile {
-    text-align: center;
-    margin-bottom: 24px;
-}
+        .page-wrap {
+            width: 100%;
+            max-width: 460px;
+        }
 
-/* 🔥 AVATAR */
-.avatar-wrapper {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 14px;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(135deg, #ff7a18, #ff5722);
-}
+        .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+                linear-gradient(180deg, #0f1216 0%, #090a0d 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow:
+                0 30px 60px rgba(0,0,0,0.45),
+                inset 0 1px 0 rgba(255,255,255,0.06);
+        }
 
-.avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #fff;
-}
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    -35deg,
+                    rgba(255,255,255,0.025) 0px,
+                    rgba(255,255,255,0.025) 16px,
+                    transparent 16px,
+                    transparent 40px
+                );
+            pointer-events: none;
+        }
 
-/* 🔥 NAME */
-.full-name {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    color: #111827;
-}
+        .top-accent {
+            position: relative;
+            padding: 22px 22px 110px;
+            background:
+                linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+                repeating-linear-gradient(
+                    -35deg,
+                    rgba(255,255,255,0.05) 0px,
+                    rgba(255,255,255,0.05) 18px,
+                    rgba(255,255,255,0.015) 18px,
+                    rgba(255,255,255,0.015) 42px
+                ),
+                linear-gradient(135deg, var(--orange-1), var(--orange-2));
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
 
-/* 🔥 PHONE */
-.phone {
-    font-size: 14px;
-    background: #f1f5f9;
-    padding: 6px 12px;
-    border-radius: 999px;
-    color: #475569;
-    display: inline-block;
-}
+        .top-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+        }
 
-/* 🔥 MESSAGE BOX */
-.message-box {
-    margin-top: 20px;
-    background: #f9fafb;
-    border-radius: 16px;
-    padding: 16px;
-}
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-/* 🔥 TITLE */
-.message-box h3 {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #111827;
-}
+        .brand-title {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 3px 12px rgba(0,0,0,0.18);
+        }
 
-/* 🔥 FIELD */
-.field {
-    margin-bottom: 12px;
-}
+        .brand-line {
+            width: 145px;
+            height: 5px;
+            border-radius: 999px;
+            background: #111;
+            margin: 2px 0 1px;
+        }
 
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #374151;
-}
+        .brand-sub {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #fff;
+            text-transform: uppercase;
+        }
 
-/* 🔥 SELECT */
-select {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 10px;
-    border: 1px solid #e5e7eb;
-    outline: none;
-    font-size: 14px;
-    background: #fff;
-    color: #111827;
-}
+        .social {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(0,0,0,0.16);
+            border: 1px solid rgba(255,255,255,0.14);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+        }
 
-/* 🔥 BUTTON */
-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #ff7a18, #ff5722);
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
+        .insta-icon {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            position: relative;
+            flex-shrink: 0;
+        }
 
-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 18px rgba(255, 87, 34, 0.3);
-}
+        .insta-icon::before {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+        }
 
-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
+        .insta-icon::after {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #fff;
+            border-radius: 50%;
+            top: 2px;
+            right: 2px;
+        }
 
-/* 🔥 STATUS */
-.status {
-    margin-top: 10px;
-    font-size: 13px;
-    text-align: center;
-}
+        .profile {
+            position: relative;
+            z-index: 2;
+            margin-top: -74px;
+            padding: 0 22px 22px;
+            text-align: center;
+        }
 
-.status.success {
-    color: #16a34a;
-}
+        .avatar-wrapper {
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #fff, #ffd2b8, #ff7f2a);
+            box-shadow:
+                0 14px 35px rgba(0,0,0,0.38),
+                0 0 0 8px rgba(255,255,255,0.03);
+        }
 
-.status.error {
-    color: #dc2626;
-}
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #fff;
+            display: block;
+            border: 3px solid rgba(255,255,255,0.9);
+        }
 
-.status.loading {
-    color: #f97316;
-}
-.phone {
-    margin-top: 8px;
-}
+        .full-name {
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 4px 18px rgba(0,0,0,0.35);
+            word-break: break-word;
+        }
 
-.phone-link {
-    display: inline-block;
-    padding: 8px 14px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #ff7a18, #ff5722);
-    color: white;
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    transition: 0.2s ease;
-}
+        .phone {
+            margin-top: 8px;
+        }
 
-.phone-link:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 14px rgba(255, 87, 34, 0.3);
-}
+        .phone-link,
+        .phone.disabled {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 44px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 700;
+        }
 
-.phone.disabled {
-    background: #f1f5f9;
-    color: #9ca3af;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 14px;
-}
+        .phone-link {
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(135deg, var(--orange-1), var(--orange-2));
+            box-shadow:
+                0 12px 24px rgba(255, 90, 0, 0.28),
+                inset 0 1px 0 rgba(255,255,255,0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-/* 🔥 MOBILE */
-@media (max-width: 480px) {
-    .card {
-        padding: 20px 14px;
-    }
+        .phone-link:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 16px 28px rgba(255, 90, 0, 0.32),
+                inset 0 1px 0 rgba(255,255,255,0.18);
+        }
 
-    .full-name {
-        font-size: 20px;
-    }
-    
-}
+        .phone.disabled {
+            color: rgba(255,255,255,0.72);
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .message-box {
+            position: relative;
+            z-index: 2;
+            margin: 4px 22px 22px;
+            padding: 20px;
+            border-radius: 24px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.06),
+                0 12px 28px rgba(0,0,0,0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .message-box h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: #fff;
+        }
+
+        .field {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+        }
+
+        select {
+            width: 100%;
+            padding: 14px 14px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            outline: none;
+            font-size: 14px;
+            background: rgba(255,255,255,0.07);
+            color: #fff;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+        }
+
+        select option {
+            color: #111;
+            background: #fff;
+        }
+
+        button {
+            width: 100%;
+            min-height: 50px;
+            border: none;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--orange-1), var(--orange-2));
+            color: #fff;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+            box-shadow:
+                0 16px 28px rgba(255, 90, 0, 0.26),
+                inset 0 1px 0 rgba(255,255,255,0.16);
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 20px 34px rgba(255, 90, 0, 0.32),
+                inset 0 1px 0 rgba(255,255,255,0.16);
+        }
+
+        button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow:
+                0 10px 18px rgba(255, 90, 0, 0.14),
+                inset 0 1px 0 rgba(255,255,255,0.12);
+        }
+
+        .status {
+            min-height: 20px;
+            margin-top: 12px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .status.success {
+            color: #7CFFB2;
+        }
+
+        .status.error {
+            color: #FF9A9A;
+        }
+
+        .status.loading {
+            color: #FFC38A;
+        }
+
+        .footer-note {
+            padding: 0 22px 22px;
+            text-align: center;
+            color: rgba(255,255,255,0.44);
+            font-size: 11px;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
+
+            .top-accent {
+                padding: 18px 16px 100px;
+            }
+
+            .profile {
+                padding: 0 16px 18px;
+            }
+
+            .message-box {
+                margin: 4px 16px 18px;
+                padding: 16px;
+                border-radius: 20px;
+            }
+
+            .brand-title {
+                font-size: 26px;
+            }
+
+            .brand-line {
+                width: 118px;
+                height: 4px;
+            }
+
+            .brand-sub {
+                font-size: 12px;
+            }
+
+            .social {
+                font-size: 12px;
+                padding: 9px 11px;
+            }
+
+            .avatar-wrapper {
+                width: 112px;
+                height: 112px;
+            }
+
+            .full-name {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="profile">
-            <div class="avatar-wrapper">
-                <img
-                    class="avatar"
-                    src="{% if user_info.avatar %}{{ user_info.avatar.url }}{% else %}https://via.placeholder.com/120{% endif %}"
-                    alt="User image"
-                    onerror="this.src='https://via.placeholder.com/120'"
-                />
+    <div class="page-wrap">
+        <div class="card">
+            <div class="top-accent">
+                <div class="top-row">
+                    <div class="brand">
+                        <div class="brand-title">CARLAND</div>
+                        <div class="brand-line"></div>
+                        <div class="brand-sub">MOY QUYISH</div>
+                    </div>
+
+                    <a
+                        class="social"
+                        href="https://instagram.com/carland_uzbekistan"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="insta-icon"></span>
+                        <span>@carland_uzbekistan</span>
+                    </a>
+                </div>
             </div>
 
-            <div class="full-name">
-                {% if user_info.full_name %}
-                    {{ user_info.full_name }}
+            <div class="profile">
+                <div class="avatar-wrapper">
+                    <img
+                        class="avatar"
+                        src="{% if user_info.avatar %}{{ user_info.avatar.url }}{% else %}https://via.placeholder.com/120{% endif %}"
+                        alt="User image"
+                        onerror="this.src='https://via.placeholder.com/120'"
+                    />
+                </div>
+
+                <div class="full-name">
+                    {% if user_info.full_name %}
+                        {{ user_info.full_name }}
+                    {% else %}
+                        F.I.O mavjud emas
+                    {% endif %}
+                </div>
+
+                {% if user.phone and share_info.phone_number_allowed %}
+                    <div class="phone">
+                        <a href="tel:{{ user.phone }}" class="phone-link">
+                            📞 {{ user.phone }}
+                        </a>
+                    </div>
                 {% else %}
-                    F.I.O mavjud emas
+                    <div class="phone disabled">
+                        🔒 Telefon raqam yashirilgan
+                    </div>
                 {% endif %}
             </div>
 
-           {% if user.phone and share_info.phone_number_allowed %}
-                <div class="phone">
-                    <a href="tel:{{ user.phone }}" class="phone-link">
-                        📞 {{ user.phone }}
-                    </a>
-                </div>
-            {% else %}
-                <div class="phone disabled">
-                    🔒 Telefon raqam yashirilgan
-                </div>
-            {% endif %}
-        </div>
+            <div class="message-box">
+                <h3>Xabar yuborish</h3>
 
-        <div class="message-box">
-            <h3>Xabar yuborish</h3>
+                <div class="field">
+                    <label for="messageSelect">Xabar variantini tanlang</label>
+                    <select id="messageSelect">
+                        <option value="">Tanlang...</option>
+                    </select>
+                </div>
 
-            <div class="field">
-                <label for="messageSelect">Xabar variantini tanlang</label>
-                <select id="messageSelect">
-                    <option value="">Tanlang...</option>
-                </select>
+                <button id="sendBtn" type="button">Xabar yuborish</button>
+                <div id="status" class="status"></div>
             </div>
 
-            <button id="sendBtn" type="button">Send</button>
-            <div id="status" class="status"></div>
+            <div class="footer-note">
+                CARLAND · Tezkor aloqa sahifasi
+            </div>
         </div>
     </div>
 
@@ -279,7 +525,6 @@ button:disabled {
                 }
 
                 const data = await response.json();
-
                 messageSelect.innerHTML = `<option value="">Tanlang...</option>`;
 
                 const results = Array.isArray(data) ? data : (data.results || []);
@@ -287,7 +532,11 @@ button:disabled {
                 results.forEach((item) => {
                     const option = document.createElement("option");
                     option.value = item.id;
-                    option.textContent = item.message_uz || item.message_ru || item.message_en || `Option ${item.id}`;
+                    option.textContent =
+                        item.message_uz ||
+                        item.message_ru ||
+                        item.message_en ||
+                        `Option ${item.id}`;
                     messageSelect.appendChild(option);
                 });
 
