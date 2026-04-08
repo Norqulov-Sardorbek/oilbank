@@ -427,7 +427,6 @@ class UserShareInfoSerializer(serializers.ModelSerializer):
         model = UserShareInfo
         fields = [
             "id",
-            "user",
             "unique_code",
             "phone_number_allowed",
             "phone_number",
