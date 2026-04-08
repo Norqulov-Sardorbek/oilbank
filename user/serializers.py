@@ -449,7 +449,7 @@ class UserShareInfoSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return UserShareInfo.objects.create(**validated_data)
     
-class NotificationMessagesSerializer(serializers.Serializer):
+class NotificationMessagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = NotificationMessages
         fields = [
