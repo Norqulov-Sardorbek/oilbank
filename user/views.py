@@ -765,7 +765,7 @@ class SendNotificationView(APIView):
             )
         try:
             message = NotificationMessages.objects.get(id=message_id)
-            user = UserInfo.objects.get(id=user_id)
+            user = User.objects.get(id=user_id)
             # Logic to send the notification to users goes here
             create_notification(
                 content_object=None,
