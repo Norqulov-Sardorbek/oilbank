@@ -25,7 +25,7 @@ class QRCodeSerializer(serializers.ModelSerializer):
                 return code
 
     def generate_qr_image(self, unique_code: str) -> ContentFile:
-        url = f"https://carland.upgrow.uz/user/qr/{unique_code}"
+        url = f"https://api.carland.uz/user/qr/{unique_code}"
         qr = qrcode.QRCode(
         version=None,
         error_correction=ERROR_CORRECT_H,
