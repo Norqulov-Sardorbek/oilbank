@@ -88,6 +88,7 @@ from .models.card import (
 from .models.edu_video import EduVideo
 from django.utils.translation import gettext_lazy as _
 from .models.qr_codes import QRCode
+from .models.help_services import HelpService, HelpServiceEmployee
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
@@ -1059,3 +1060,13 @@ class QRCodeAdmin(admin.ModelAdmin):
     list_display = ("id", "unique_code", "image")
     search_fields = ("unique_code",)
     ordering = ("-id",)
+    
+@admin.register(HelpService)
+class HelpServiceAdmin(admin.ModelAdmin):
+    list_display = ("id", "name_uz", "description_uz", "created_at")
+    search_fields = ("name_uz",)
+    ordering = ("-created_at",)
+
+@admin.register(HelpServiceEmployee)
+class HelpServiceEmployeeAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "phone")
