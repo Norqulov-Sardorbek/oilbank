@@ -68,6 +68,7 @@ from app.views.order import (
 )
 from app.views.qr_codes import QRCodeViewSet
 from app.views.edu_video import EduVideoViewSet
+from app.views.help_services import HelpServiceViewSet, HelpServiceEmployeeViewSet
 router = DefaultRouter()
 
 router.register(r"notifications", NotificationViewSet, basename="notification")
@@ -113,6 +114,9 @@ router.register(r"static-pages", StaticPageViewSet, basename="static-page")
 router.register(r"oil-change-rating", OilChangeRatingViewSet, basename="oil-change-rating")
 router.register(r"edu-videos", EduVideoViewSet, basename="edu-video")
 router.register(r"qr-codes", QRCodeViewSet, basename="qr-code")
+router.register(r"help-services", HelpServiceViewSet, basename="help-service")
+router.register(r"help-service-employees", HelpServiceEmployeeViewSet, basename="help-service-employee")
+
 urlpatterns = [
     path("", include(router.urls)),
     path("saved-products/", SavedProductListView.as_view(), name="saved-products"),
