@@ -793,7 +793,9 @@ class QRUserView(View):
     template_name = "user/user_card.html"
 
     def get(self, request, code, *args, **kwargs):
-        user_share_info = get_object_or_404(UserShareInfo, unique_code__unique_code=code)
+        user_share_info = UserShareInfo.objects.select_related('user').filter(unique_code__unique_code=code).first()
+        if not user_share_info:
+            return render(request, "user/user_not_found.html", status=404)
         user = user_share_info.user
         user_info = UserInfo.objects.filter(user_id=user.id).first()
         
