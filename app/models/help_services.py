@@ -13,7 +13,7 @@ class HelpService(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ["order", "id"]
+        ordering = [ "id"]
         verbose_name = "Yordam xizmati"
         verbose_name_plural = "Yordam xizmatlari"
 
