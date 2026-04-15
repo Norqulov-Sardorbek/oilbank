@@ -1063,7 +1063,7 @@ class QRCodeAdmin(admin.ModelAdmin):
     
 @admin.register(HelpService)
 class HelpServiceAdmin(admin.ModelAdmin):
-    list_display = ("id", "name_uz", "description_uz", "created_at")
+    list_display = ("id", "name_uz", "description", "created_at")
     search_fields = ("name_uz",)
     ordering = ("-created_at",)
 
