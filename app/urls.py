@@ -68,7 +68,7 @@ from app.views.order import (
 )
 from app.views.qr_codes import QRCodeViewSet
 from app.views.edu_video import EduVideoViewSet
-from app.views.help_services import HelpServiceViewSet, HelpServiceEmployeeViewSet
+from app.views.help_services import HelpServiceViewSet, HelpServiceEmployeeViewSet,HelpServiceEmployeesAPIView
 router = DefaultRouter()
 
 router.register(r"notifications", NotificationViewSet, basename="notification")
@@ -138,5 +138,6 @@ urlpatterns = [
     path("rating-types/", rating_type_list, name="rating-type-list-func"),
     path('request-form/', RequestFormCreateView.as_view(), name='request-form'),
     path("landing-banners/", LandingPageBannerListAPIView.as_view(), name="landing-banners"),
+    path("help-employees/<int:help_service_id>/", HelpServiceEmployeesAPIView.as_view(), name="help-service-employees"),
 ]
 
