@@ -25,7 +25,7 @@ class HelpServiceEmployeeViewSet(viewsets.ModelViewSet):
 class HelpServiceEmployeesAPIView(APIView):
     permission_classes = [AllowAny]
 
-    def get(self, request, help_service_id):
-        employees = HelpServiceEmployee.objects.filter(help_service_id=help_service_id)
+    def get(self, request, service_id):
+        employees = HelpServiceEmployee.objects.filter(service_id=service_id)
         serializer = HelpServiceEmployeeSerializer(employees, many=True)
         return Response(serializer.data,status=200)

@@ -138,6 +138,6 @@ urlpatterns = [
     path("rating-types/", rating_type_list, name="rating-type-list-func"),
     path('request-form/', RequestFormCreateView.as_view(), name='request-form'),
     path("landing-banners/", LandingPageBannerListAPIView.as_view(), name="landing-banners"),
-    path("help-employees/<int:help_service_id>/", HelpServiceEmployeesAPIView.as_view(), name="help-service-employees"),
+    path("help-employees/<int:service_id>/", HelpServiceEmployeesAPIView.as_view(), name="help-service-employees"),
 ]
 
