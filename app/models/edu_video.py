@@ -14,7 +14,7 @@ class EduVideo(models.Model):
     class VideoType(models.TextChoices):
         URL = "url", "Url"
         FILE = "file", "File"
-    category = models.ForeignKey(VideoCategory, on_delete=models.CASCADE, related_name="videos")
+    category = models.ForeignKey(VideoCategory, on_delete=models.CASCADE, related_name="videos",null=True, blank=True)
     title_uz = models.CharField(max_length=255)
     title_ru = models.CharField(max_length=255, null=True, blank=True)
     title_en = models.CharField(max_length=255, null=True, blank=True)
