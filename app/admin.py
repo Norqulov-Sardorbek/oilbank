@@ -1060,6 +1060,7 @@ class VideoCategoryAdmin(admin.ModelAdmin):
     list_display = ("name_uz", "name_en", "name_ru")
     search_fields = ("name_uz", "name_en", "name_ru")
 
+@admin.register(VideoSubcategory)
 class VideoSubcategoryAdmin(admin.ModelAdmin):
     list_display = ("name_uz", "name_en", "name_ru", "category")
     search_fields = ("name_uz", "name_en", "name_ru", "category__name_uz", "category__name_en", "category__name_ru")
