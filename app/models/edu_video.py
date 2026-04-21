@@ -7,14 +7,18 @@ class VideoCategory(models.Model):
     name_ru = models.CharField(max_length=255, null=True, blank=True)
     name_en = models.CharField(max_length=255, null=True, blank=True)
     
-
+class VideoSubcategory(models.Model):
+    name_uz = models.CharField(max_length=255)
+    name_ru = models.CharField(max_length=255, null=True, blank=True)
+    name_en = models.CharField(max_length=255, null=True, blank=True)
+    category = models.ForeignKey(VideoCategory, on_delete=models.CASCADE, related_name="subcategories",null=True, blank=True)
 
 
 class EduVideo(models.Model):
     class VideoType(models.TextChoices):
         URL = "url", "Url"
         FILE = "file", "File"
-    category = models.ForeignKey(VideoCategory, on_delete=models.CASCADE, related_name="videos",null=True, blank=True)
+    subcategory = models.ForeignKey(VideoSubcategory, on_delete=models.CASCADE, related_name="videos",null=True, blank=True)
     title_uz = models.CharField(max_length=255)
     title_ru = models.CharField(max_length=255, null=True, blank=True)
     title_en = models.CharField(max_length=255, null=True, blank=True)
