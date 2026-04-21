@@ -67,7 +67,7 @@ from app.views.order import (
     PromoRewardViewSet,
 )
 from app.views.qr_codes import QRCodeViewSet
-from app.views.edu_video import EduVideoViewSet
+from app.views.edu_video import EduVideoViewSet, VideoCategoryViewSet, VideoSubcategoryViewSet
 from app.views.help_services import HelpServiceViewSet, HelpServiceEmployeeViewSet,HelpServiceEmployeesAPIView
 router = DefaultRouter()
 
@@ -116,6 +116,9 @@ router.register(r"edu-videos", EduVideoViewSet, basename="edu-video")
 router.register(r"qr-codes", QRCodeViewSet, basename="qr-code")
 router.register(r"help-services", HelpServiceViewSet, basename="help-service")
 router.register(r"help-service-employees", HelpServiceEmployeeViewSet, basename="help-service-employee")
+router.register(r"video-categories", VideoCategoryViewSet, basename="video-category")
+router.register(r"video-subcategories", VideoSubcategoryViewSet, basename="video-subcategory")
+
 
 urlpatterns = [
     path("", include(router.urls)),
