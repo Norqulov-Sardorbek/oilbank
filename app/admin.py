@@ -85,7 +85,7 @@ from .models.card import (
     Cashback,
     BalanceUsageLimit,
 )
-from .models.edu_video import EduVideo
+from .models.edu_video import EduVideo, VideoCategory, VideoSubcategory
 from django.utils.translation import gettext_lazy as _
 from .models.qr_codes import QRCode
 from .models.help_services import HelpService, HelpServiceEmployee
@@ -1054,6 +1054,16 @@ class EduVideoAdmin(admin.ModelAdmin):
     list_display = ("title_uz", "description_uz", "video_type", "video_url")
     search_fields = ("title_uz", "description_uz")
     list_filter = ("video_type",)
+    
+@admin.register(VideoCategory)
+class VideoCategoryAdmin(admin.ModelAdmin):
+    list_display = ("name_uz", "name_en", "name_ru")
+    search_fields = ("name_uz", "name_en", "name_ru")
+
+class VideoSubcategoryAdmin(admin.ModelAdmin):
+    list_display = ("name_uz", "name_en", "name_ru", "category")
+    search_fields = ("name_uz", "name_en", "name_ru", "category__name_uz", "category__name_en", "category__name_ru")
+    list_filter = ("category",)
 
 @admin.register(QRCode)
 class QRCodeAdmin(admin.ModelAdmin):

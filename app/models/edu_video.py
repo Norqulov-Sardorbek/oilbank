@@ -6,6 +6,7 @@ class VideoCategory(models.Model):
     name_uz = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255, null=True, blank=True)
     name_en = models.CharField(max_length=255, null=True, blank=True)
+    image = models.ImageField(upload_to="video_categories/", null=True, blank=True)
     
 class VideoSubcategory(models.Model):
     name_uz = models.CharField(max_length=255)

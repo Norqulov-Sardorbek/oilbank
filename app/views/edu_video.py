@@ -19,7 +19,7 @@ class VideoCategorySerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField()
     class Meta:
         model = VideoCategory
-        fields = ["id", "name"]
+        fields = ["id", "name", "image"]
         
     def get_name(self, obj):
         lang = get_request_language(self.context.get("request"))
@@ -115,5 +115,5 @@ class EduVideoViewSet(ModelViewSet):
         queryset = super().get_queryset()
         subcategory_id = self.request.query_params.get("subcategory_id")
         if subcategory_id:
-            queryset = queryset.filter(category_id=subcategory_id)
+            queryset = queryset.filter(subcategory_id=subcategory_id)
         return queryset
