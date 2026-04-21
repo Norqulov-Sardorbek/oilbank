@@ -8,13 +8,16 @@ class VideoCategory(models.Model):
     name_en = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(upload_to="video_categories/", null=True, blank=True)
     
+    def __str__(self):
+        return self.name_uz
 class VideoSubcategory(models.Model):
     name_uz = models.CharField(max_length=255)
     name_ru = models.CharField(max_length=255, null=True, blank=True)
     name_en = models.CharField(max_length=255, null=True, blank=True)
     category = models.ForeignKey(VideoCategory, on_delete=models.CASCADE, related_name="subcategories",null=True, blank=True)
 
-
+    def __str__(self):
+        return self.name_uz
 class EduVideo(models.Model):
     class VideoType(models.TextChoices):
         URL = "url", "Url"
@@ -35,4 +38,7 @@ class EduVideo(models.Model):
         if self.video_file:
             return round(self.video_file.size / (1024 * 1024), 2)
         return None
+    
+    def __str__(self):
+        return self.title_uz
     
