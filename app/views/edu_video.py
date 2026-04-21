@@ -97,9 +97,9 @@ class EduVideoViewSet(ModelViewSet):
         operation_description="List all educational videos or create a new one.",
         manual_parameters=[
             openapi.Parameter(
-                "category_id",
+                "subcategory_id",
                 openapi.IN_QUERY,
-                description="Filter videos by category ID",
+                description="Filter videos by subcategory ID",
                 type=openapi.TYPE_INTEGER,
             )
         ],
