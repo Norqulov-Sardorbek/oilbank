@@ -40,7 +40,7 @@ class EduVideoSerializer(serializers.ModelSerializer):
     description = serializers.SerializerMethodField()
     class Meta:
         model = EduVideo
-        fields = ["id", "category", "title", "description", "video_type", "video_url", "video_file", "file_size"]
+        fields = ["id",  "title", "description", "video_type", "video_url", "video_file", "file_size"]
     def get_title(self, obj):
         lang = get_request_language(self.context.get("request"))
         return getattr(obj, f"title_{lang}", obj.title_uz)
