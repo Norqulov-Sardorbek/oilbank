@@ -10,7 +10,7 @@ services:
       sh -c "python manage.py collectstatic --noinput &&
              python manage.py migrate &&
              python manage.py migrate token_blacklist &&
-             gunicorn --bind 0.0.0.0:8000 config.wsgi:application --workers 4"
+             gunicorn --bind 0.0.0.0:8000 config.wsgi:application --workers 2"
     volumes:
       - /home/ubuntu/.data/static:/home/user/web/staticfiles/
       - /home/ubuntu/.data/media:/home/user/web/media/
@@ -31,7 +31,7 @@ services:
   celery_beat:
     container_name: celery_beat
     build: .
-    command: celery -A config beat --loglevel=debug
+    command: celery -A core worker -l info --concurrency=1 --max-tasks-per-child=100
     volumes:
       - /home/ubuntu/.data/static:/home/user/web/staticfiles/
       - /home/ubuntu/.data/media:/home/user/web/media/
