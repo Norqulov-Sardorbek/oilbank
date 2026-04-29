@@ -101,6 +101,12 @@ class EduVideoViewSet(ModelViewSet):
                 openapi.IN_QUERY,
                 description="Filter videos by subcategory ID",
                 type=openapi.TYPE_INTEGER,
+            ),
+            openapi.Parameter(
+                "category_id",
+                openapi.IN_QUERY,
+                description="Filter videos by category ID",
+                type=openapi.TYPE_INTEGER,
             )
         ],
     )
@@ -116,4 +122,7 @@ class EduVideoViewSet(ModelViewSet):
         subcategory_id = self.request.query_params.get("subcategory_id")
         if subcategory_id:
             queryset = queryset.filter(subcategory_id=subcategory_id)
+        category_id = self.request.query_params.get("category_id")
+        if category_id:
+            queryset = queryset.filter(subcategory__category_id=category_id)
         return queryset
