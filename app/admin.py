@@ -1068,9 +1068,100 @@ class VideoSubcategoryAdmin(admin.ModelAdmin):
 
 @admin.register(QRCode)
 class QRCodeAdmin(admin.ModelAdmin):
-    list_display = ("id", "unique_code", "image")
-    search_fields = ("unique_code",)
-    ordering = ("-id",)
+    change_list_template = "admin/qr_codes/qrcode_change_list.html"
+    list_display = ("id", "serial_number", "unique_code", "image_url", "image_preview")
+    search_fields = ("unique_code", "serial_number")
+    ordering = ("serial_number",)
+    actions = ["download_selected_as_zip"]
+
+    def image_url(self, obj):
+        if obj.image:
+            return format_html('<a href="{0}" target="_blank">{0}</a>', obj.image.url)
+        return "-"
+
+    image_url.short_description = "Image URL"
+
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="height:60px;" />', obj.image.url)
+        return "-"
+
+    image_preview.short_description = "Preview"
+
+    def get_urls(self):
+        from django.urls import path
+
+        urls = super().get_urls()
+        custom_urls = [
+            path(
+                "generate/",
+                self.admin_site.admin_view(self.generate_qr_codes_view),
+                name="app_qrcode_generate",
+            ),
+        ]
+        return custom_urls + urls
+
+    def _build_zip_response(self, qr_codes, zip_filename):
+        import zipfile
+        from io import BytesIO
+        from django.http import HttpResponse
+
+        buffer = BytesIO()
+        with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zf:
+            for qr in qr_codes:
+                if not qr.image:
+                    continue
+                name = f"QR-{qr.serial_number}.png" if qr.serial_number else f"{qr.unique_code}.png"
+                qr.image.open("rb")
+                try:
+                    zf.writestr(name, qr.image.read())
+                finally:
+                    qr.image.close()
+
+        response = HttpResponse(buffer.getvalue(), content_type="application/zip")
+        response["Content-Disposition"] = f'attachment; filename="{zip_filename}"'
+        return response
+
+    def generate_qr_codes_view(self, request):
+        from django import forms
+        from django.contrib import messages
+        from django.shortcuts import render
+        from app.serializers.qr_codes import QRCodeSerializer
+
+        class GenerateForm(forms.Form):
+            quantity = forms.IntegerField(min_value=1, max_value=1000, initial=1, label="Quantity")
+
+        if request.method == "POST":
+            form = GenerateForm(request.POST)
+            if form.is_valid():
+                quantity = form.cleaned_data["quantity"]
+                serializer = QRCodeSerializer(data={"quantity": quantity})
+                serializer.is_valid(raise_exception=True)
+                qr_codes = serializer.save()
+                messages.success(request, f"Generated {len(qr_codes)} QR codes.")
+                first = qr_codes[0].serial_number
+                last = qr_codes[-1].serial_number
+                zip_name = f"qr_codes_{first}-{last}.zip"
+                return self._build_zip_response(qr_codes, zip_name)
+        else:
+            form = GenerateForm()
+
+        context = {
+            **self.admin_site.each_context(request),
+            "form": form,
+            "opts": self.model._meta,
+            "title": "Generate QR codes",
+        }
+        return render(request, "admin/qr_codes/qrcode_generate.html", context)
+
+    def download_selected_as_zip(self, request, queryset):
+        qr_codes = list(queryset.order_by("serial_number"))
+        if not qr_codes:
+            self.message_user(request, "No QR codes selected.", level="warning")
+            return None
+        return self._build_zip_response(qr_codes, "qr_codes_selected.zip")
+
+    download_selected_as_zip.short_description = "Download selected QR codes as ZIP"
     
 @admin.register(HelpService)
 class HelpServiceAdmin(admin.ModelAdmin):

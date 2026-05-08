@@ -3,6 +3,7 @@ from io import BytesIO
 
 import qrcode
 from django.core.files.base import ContentFile
+from django.db.models import Max
 from rest_framework import serializers
 from qrcode.constants import ERROR_CORRECT_H
 from PIL import Image
@@ -15,8 +16,8 @@ class QRCodeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = QRCode
-        fields = ['id', 'unique_code', 'image', 'quantity']
-        read_only_fields = ['id', 'unique_code', 'image']
+        fields = ['id', 'serial_number', 'unique_code', 'image', 'quantity']
+        read_only_fields = ['id', 'serial_number', 'unique_code', 'image']
 
     def generate_unique_code(self) -> str:
         while True:
@@ -24,7 +25,11 @@ class QRCodeSerializer(serializers.ModelSerializer):
             if not QRCode.objects.filter(unique_code=code).exists():
                 return code
 
-    def generate_qr_image(self, unique_code: str) -> ContentFile:
+    def get_next_serial_number(self) -> int:
+        last = QRCode.objects.aggregate(Max('serial_number'))['serial_number__max']
+        return (last or 0) + 1
+
+    def generate_qr_image(self, unique_code: str, serial_number: int) -> ContentFile:
         url = f"https://api.carland.uz/user/qr/{unique_code}"
         qr = qrcode.QRCode(
         version=None,
@@ -62,20 +67,23 @@ class QRCodeSerializer(serializers.ModelSerializer):
         # 6. Saqlash
         
         buffer = BytesIO()
-        
+
         frame.save(buffer, format="PNG")
-        filename = f"{unique_code}.png"
+        filename = f"QR-{serial_number}.png"
         return ContentFile(buffer.getvalue(), name=filename)
 
     def create(self, validated_data):
         quantity = validated_data.pop('quantity', 1)
 
+        next_serial = self.get_next_serial_number()
         qr_codes = []
-        for _ in range(quantity):
+        for offset in range(quantity):
+            serial_number = next_serial + offset
             unique_code = self.generate_unique_code()
-            qr_image = self.generate_qr_image(unique_code)
+            qr_image = self.generate_qr_image(unique_code, serial_number)
 
             qr_code = QRCode.objects.create(
+                serial_number=serial_number,
                 unique_code=unique_code,
                 image=qr_image,
             )
