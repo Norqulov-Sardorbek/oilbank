@@ -1069,7 +1069,7 @@ class VideoSubcategoryAdmin(admin.ModelAdmin):
 @admin.register(QRCode)
 class QRCodeAdmin(admin.ModelAdmin):
     change_list_template = "admin/qr_codes/qrcode_change_list.html"
-    list_display = ("id", "serial_number", "unique_code", "image_url", "image_preview")
+    list_display = ("display_name", "serial_number", "unique_code", "image_url", "image_preview")
     search_fields = ("unique_code", "serial_number")
     ordering = ("serial_number",)
     actions = ["download_selected_as_zip"]
